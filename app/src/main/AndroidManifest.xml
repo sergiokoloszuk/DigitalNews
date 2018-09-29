@@ -18,8 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".ConfirmationActivity"></activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:label="REGISTER NOW" />
+        <activity
+            android:name=".ConfirmationActivity"
+            android:label="REGISTER">
+
+        </activity>
     </application>
 
 </manifest>
