@@ -91,6 +91,7 @@
         android:layout_alignParentBottom="true"
         android:text="Register now"
         android:fontFamily="@font/karla_regular"
+        android:backgroundTint="@color/primary"
         android:textAllCaps="true" />
 
 
