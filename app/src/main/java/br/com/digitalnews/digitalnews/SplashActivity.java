@@ -16,7 +16,7 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         imageView = findViewById(R.id.imageview_splash);
-        imageView.setOnClickListener(new View.OnClickListener() {
+       imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(SplashActivity.this, LoginActivity.class));
