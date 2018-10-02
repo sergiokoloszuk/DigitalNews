@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="16dp"
+    tools:context="br.com.digitalnews.digitalnews.ThemesActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/karla_regular"
+        android:text="Escolha seus temas favoritos!"
+        android:textSize="22dp" />
+
+
+    <CheckBox
+        android:id="@+id/checkBox_atualidades"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="      Atualidades"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/karla_regular"
+        android:textSize="18dp"/>
+
+    <CheckBox
+        android:id="@+id/checkBox_politica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:text="      Política"
+        android:fontFamily="@font/karla_regular"
+        android:textSize="18dp"/>
+
+    <CheckBox
+        android:id="@+id/checkBox_esportes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:text="      Esportes"
+        android:fontFamily="@font/karla_regular"
+        android:textSize="18dp"/>
+
+    <CheckBox
+        android:id="@+id/checkBox_economia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:text="      Economia"
+        android:fontFamily="@font/karla_regular"
+        android:textSize="18dp"/>
+
+    <CheckBox
+        android:id="@+id/checkBox_ciência"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:text="      Ciência"
+        android:fontFamily="@font/karla_regular"
+        android:textSize="18dp"/>
+
+    <CheckBox
+        android:id="@+id/checkBox_mudno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:text="      Mundo"
+        android:fontFamily="@font/karla_regular"
+        android:textSize="18dp"/>
+
+    <CheckBox
+        android:id="@+id/checkBox_natureza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="      Natureza"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/karla_regular"
+        android:textSize="18dp"/>
+
+
+</LinearLayout>

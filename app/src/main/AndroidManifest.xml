@@ -27,10 +27,10 @@
             android:label="LOGIN"/>
         <activity
             android:name=".RegisterActivity"
-            android:label="REGISTER NOW" />
+            android:label="REGISTER" />
         <activity
-            android:name=".ConfirmationActivity"
-            android:label="REGISTER">
+            android:name=".ThemesActivity"
+            android:label="Seja bem vindo!">
 
         </activity>
     </application>

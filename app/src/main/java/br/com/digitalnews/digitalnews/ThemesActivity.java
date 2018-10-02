@@ -3,11 +3,11 @@ package br.com.digitalnews.digitalnews;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class ConfirmationActivity extends AppCompatActivity {
+public class ThemesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_confirmation);
+        setContentView(R.layout.activity_themes);
     }
 }
