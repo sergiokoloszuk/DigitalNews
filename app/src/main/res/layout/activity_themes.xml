@@ -8,7 +8,7 @@
     tools:context="br.com.digitalnews.digitalnews.ThemesActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewThemes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
