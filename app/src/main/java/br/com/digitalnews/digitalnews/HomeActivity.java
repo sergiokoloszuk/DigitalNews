@@ -3,13 +3,20 @@ package br.com.digitalnews.digitalnews;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
 import android.widget.TextView;
+
+import br.com.digitalnews.digitalnews.fragments.FragmentForYou;
+
 
 public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private TextView mTextMessage;
+    private FrameLayout container;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -45,10 +52,34 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        container = (FrameLayout) findViewById(R.id.container);
+
+        initViews();
+        replaceFragment(new FragmentForYou());
+
+
     }
+
+    private void replaceFragment(FragmentForYou fragmentForYou) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.container, fragmentForYou);
+        transaction.addToBackStack("Frag");
+        transaction.commit();
+    }
+
+    private void initViews() {
+
+
+    }
+
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         return false;
     }
+
+
+
 }
