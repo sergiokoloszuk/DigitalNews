@@ -15,20 +15,10 @@ import br.com.digitalnews.digitalnews.fragments.FragmentForYou;
 public class MainActivity extends AppCompatActivity {
 
 
-    private ViewPager viewPager;
-    private LinearLayout linearLayout;
-    private TabLayout tabLayout;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        viewPager = findViewById(R.id.viewpager);
-        linearLayout = findViewById(R.id.linearlayout);
-        tabLayout = findViewById(R.id.tablayout);
-
-
 
 
     }
