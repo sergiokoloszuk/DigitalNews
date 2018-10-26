@@ -1,24 +1,48 @@
 
 package br.com.digitalnews.digitalnews.model;
 
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+
 import com.google.gson.annotations.Expose;
 
+@Entity(tableName = "articles")
 public class Article {
 
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id")
+    private long id;
+
+    @ColumnInfo(name = "author")
     @Expose
     private String author;
+
+    @ColumnInfo(name = "content")
     @Expose
     private String content;
+
+    @ColumnInfo(name = "description")
     @Expose
     private String description;
+
+    @ColumnInfo(name = "publishedAt")
     @Expose
     private String publishedAt;
+
+    @ColumnInfo(name = "source")
     @Expose
     private Source source;
+
+    @ColumnInfo(name = "title")
     @Expose
     private String title;
+
+    @ColumnInfo(name = "url")
     @Expose
     private String url;
+
+    @ColumnInfo(name = "urlToImage")
     @Expose
     private String urlToImage;
 
