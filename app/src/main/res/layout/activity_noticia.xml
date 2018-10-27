@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/ic_notifications"
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:background="@color/accent"
@@ -34,7 +34,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:text="Manchete"
-                android:textColor="#323232"
+                android:textColor="@color/darkText"
                 android:textSize="24dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +58,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Fonte"
-                    android:textColor="#323232"
+                    android:textColor="@color/darkText"
                     android:textSize="12dp"
                     android:textStyle="bold" />
 
@@ -69,7 +69,7 @@
                     android:layout_marginLeft="6dp"
                     android:layout_marginRight="6dp"
                     android:text="–"
-                    android:textColor="#323232"
+                    android:textColor="@color/darkText"
                     android:textSize="12dp"
                     android:textStyle="bold" />
 
@@ -78,7 +78,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Data"
-                    android:textColor="#323232"
+                    android:textColor="@color/darkText"
                     android:textSize="12dp"
                     android:textStyle="bold" />
 
@@ -89,7 +89,7 @@
                     android:layout_marginLeft="6dp"
                     android:layout_marginRight="6dp"
                     android:text="–"
-                    android:textColor="#323232"
+                    android:textColor="@color/darkText"
                     android:textSize="12dp"
                     android:textStyle="bold" />
 
@@ -98,7 +98,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Jornalista"
-                    android:textColor="#323232"
+                    android:textColor="@color/darkText"
                     android:textSize="12dp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -165,7 +165,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Jornalista"
+                        android:text="publicou este artigo"
                         android:textSize="12sp" />
                 </LinearLayout>
             </LinearLayout>
@@ -197,7 +197,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="3 Comentários"
-                    android:textColor="#323232"
+                    android:textColor="@color/darkText"
                     android:textSize="12dp"
                     android:textStyle="bold" />
 
@@ -214,7 +214,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="40 Curtidas"
-                    android:textColor="#323232"
+                    android:textColor="@color/darkText"
                     android:textSize="12dp"
                     android:textStyle="bold" />
             </LinearLayout>
