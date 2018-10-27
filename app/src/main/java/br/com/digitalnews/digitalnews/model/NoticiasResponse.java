@@ -3,14 +3,20 @@ package br.com.digitalnews.digitalnews.model;
 
 import java.util.List;
 import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class NoticiasResponse {
 
     @Expose
+    @SerializedName("articles")
     private List<Article> articles;
+
     @Expose
+    @SerializedName("status")
     private String status;
+
     @Expose
+    @SerializedName("totalResults")
     private Long totalResults;
 
     public List<Article> getArticles() {

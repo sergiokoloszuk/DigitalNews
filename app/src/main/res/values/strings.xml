@@ -8,4 +8,7 @@
     <string name="action_settings">Settings</string>
     <string name="lorem_ipsum">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec condimentum molestie quam vel lobortis. Duis sit amet pulvinar justo, ut dignissim massa. Nulla nec tellus mauris. Cras a risus vestibulum nibh condimentum bibendum. Maecenas at purus ligula. Suspendisse elementum nec urna a mollis. Vivamus nec odio ante. Integer mollis elit sit amet dolor sollicitudin pretium. Curabitur eleifend volutpat nisl non euismod."</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
