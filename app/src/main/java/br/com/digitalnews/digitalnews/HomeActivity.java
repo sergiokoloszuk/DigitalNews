@@ -11,6 +11,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import br.com.digitalnews.digitalnews.fragments.FragmentForYou;
+import br.com.digitalnews.digitalnews.fragments.NotificationsFragment;
 
 
 public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -35,6 +36,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
                     return true;
                 case R.id.navigation_notifications:
                     mTextMessage.setText("Notifications");
+                    replaceFragment(new NotificationsFragment());
                     return true;
                 case R.id.navigation_account:
                     mTextMessage.setText("Account");
@@ -61,9 +63,9 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
 
     }
 
-    private void replaceFragment(FragmentForYou fragmentForYou) {
+    private void replaceFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.container, fragmentForYou);
+        transaction.replace(R.id.container, fragment);
         transaction.addToBackStack("Frag");
         transaction.commit();
     }
