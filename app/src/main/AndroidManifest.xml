@@ -27,12 +27,20 @@
             android:name=".RegisterActivity"
             android:label="REGISTER" />
         <activity
+            android:name=".ConfirmationActivity"
+            android:label="REGISTER"></activity>
+        <activity
+            android:name="br.com.digitalhouse.app.PerfilActivity"
+            android:label="@string/title_activity_perfil"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".ThemesActivity"
             android:label="Seja bem vindo!" />
         <activity
             android:name=".HomeActivity"
             android:label="FOR YOU" />
         <activity android:name=".NoticiaActivity"></activity>
+
     </application>
 
 </manifest>
