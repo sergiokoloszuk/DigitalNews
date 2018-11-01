@@ -21,7 +21,7 @@ public class ThemesActivity extends AppCompatActivity {
         btnContinuar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ThemesActivity.this, HomeActivity.class));
+                startActivity(new Intent(ThemesActivity.this, ExplorerActivity.class));
 
 
             }
