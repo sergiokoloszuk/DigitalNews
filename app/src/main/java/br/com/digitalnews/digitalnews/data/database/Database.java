@@ -6,7 +6,7 @@ import android.content.Context;
 import br.com.digitalnews.digitalnews.interfaces.ArticleDAO;
 import br.com.digitalnews.digitalnews.model.Article;
 
-@android.arch.persistence.room.Database(entities = {Article.class}, version = 1)
+@android.arch.persistence.room.Database(entities = {Article.class}, version = 1, exportSchema = false)
 public abstract class Database extends RoomDatabase{
 
     public abstract ArticleDAO getArticleDAO();
