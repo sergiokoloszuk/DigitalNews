@@ -3,8 +3,13 @@ package br.com.digitalnews.digitalnews.data.database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
+import br.com.digitalnews.digitalnews.interfaces.ArticleDAO;
+import br.com.digitalnews.digitalnews.model.Article;
 
-public abstract class Database extends RoomDatabase {
+@android.arch.persistence.room.Database(entities = {Article.class}, version = 1)
+public abstract class Database extends RoomDatabase{
+
+    public abstract ArticleDAO getArticleDAO();
 
     private static volatile Database INSTANCE;
 
