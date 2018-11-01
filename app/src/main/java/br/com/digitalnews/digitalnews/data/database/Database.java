@@ -18,7 +18,7 @@ public abstract class Database extends RoomDatabase{
             synchronized (Database.class) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            Database.class, "digitalnews_db")
+                            Database.class, "digital_news_db")
                             .build();
                 }
             }
