@@ -12,10 +12,10 @@ import br.com.digitalnews.digitalnews.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NotificationsFragment extends Fragment {
+public class TestePerfilFragment extends Fragment {
 
 
-    public NotificationsFragment() {
+    public TestePerfilFragment() {
         // Required empty public constructor
     }
 
@@ -23,7 +23,7 @@ public class NotificationsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_notifications, container, false);
+        View view = inflater.inflate(R.layout.fragment_teste_perfil, container, false);
         return view;
     }
 

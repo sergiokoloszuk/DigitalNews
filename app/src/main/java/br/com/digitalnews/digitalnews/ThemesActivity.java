@@ -22,8 +22,6 @@ public class ThemesActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ThemesActivity.this, ExplorerActivity.class));
-
-
             }
         });
 
