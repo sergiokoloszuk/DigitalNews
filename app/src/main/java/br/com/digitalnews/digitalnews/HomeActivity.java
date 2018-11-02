@@ -1,5 +1,6 @@
 package br.com.digitalnews.digitalnews;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import br.com.digitalnews.digitalnews.fragments.FragmentForYou;
 import br.com.digitalnews.digitalnews.fragments.NotificationsFragment;
+import br.com.digitalnews.digitalnews.fragments.TestePerfilFragment;
 
 
 public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -26,20 +28,17 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText("Home");
                     return true;
                 case R.id.navigation_foryou:
-                    mTextMessage.setText("For You");
+                    startActivity(new Intent(HomeActivity.this, ExplorerActivity.class));
                     return true;
                 case R.id.navigation_search:
-                    mTextMessage.setText("Search");
                     return true;
                 case R.id.navigation_notifications:
-                    mTextMessage.setText("Notifications");
                     replaceFragment(new NotificationsFragment());
                     return true;
                 case R.id.navigation_account:
-                    mTextMessage.setText("Account");
+                    replaceFragment(new TestePerfilFragment());
                     return true;
             }
             return false;
@@ -51,11 +50,11 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
+        mTextMessage = findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        container = (FrameLayout) findViewById(R.id.container);
+        container = findViewById(R.id.container);
 
         initViews();
         replaceFragment(new FragmentForYou());
