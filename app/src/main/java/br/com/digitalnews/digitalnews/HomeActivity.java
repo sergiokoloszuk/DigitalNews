@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import br.com.digitalnews.digitalnews.fragments.FragmentForYou;
 import br.com.digitalnews.digitalnews.fragments.NotificationsFragment;
-import br.com.digitalnews.digitalnews.fragments.TestePerfilFragment;
+import br.com.digitalnews.digitalnews.fragments.PerfilFragment;
 
 
 public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -38,7 +38,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
                     replaceFragment(new NotificationsFragment());
                     return true;
                 case R.id.navigation_account:
-                    replaceFragment(new TestePerfilFragment());
+                    replaceFragment(new PerfilFragment());
                     return true;
             }
             return false;
