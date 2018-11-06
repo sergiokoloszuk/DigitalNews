@@ -23,7 +23,5 @@ public class RegisterActivity extends AppCompatActivity {
                 startActivity(new Intent(RegisterActivity.this, ThemesActivity.class));
             }
         });
-
-
     }
 }
