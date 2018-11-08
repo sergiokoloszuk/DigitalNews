@@ -1,4 +1,4 @@
-package br.com.digitalnews.digitalnews;
+package br.com.digitalnews.digitalnews.view;
 
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.digitalnews.digitalnews.R;
 import br.com.digitalnews.digitalnews.fragments.FragmentForYou;
 
 public class MainActivity extends AppCompatActivity {

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SplashActivity"
+            android:name=".view.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,23 +19,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".view.MainActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".view.LoginActivity"
             android:label="LOGIN" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".view.RegisterActivity"
             android:label="REGISTER" />
 
         <activity
-            android:name=".ThemesActivity"
+            android:name=".view.ThemesActivity"
             android:label="Seja bem vindo!" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".view.HomeActivity"
             android:label="FOR YOU" />
-        <activity android:name=".NoticiaActivity"/>
-        <activity android:name=".ExplorerActivity"
-            android:label="Explorar"/>
+        <activity android:name=".view.NoticiaActivity"/>
 
     </application>
 

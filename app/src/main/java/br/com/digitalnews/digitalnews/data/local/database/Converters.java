@@ -1,4 +1,4 @@
-package br.com.digitalnews.digitalnews.data.database;
+package br.com.digitalnews.digitalnews.data.local.database;
 
 import android.arch.persistence.room.TypeConverter;
 
