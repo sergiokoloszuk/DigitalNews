@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import br.com.digitalnews.digitalnews.HomeActivity;
 import br.com.digitalnews.digitalnews.R;
 
 public class LoginActivity extends AppCompatActivity  {
