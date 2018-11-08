@@ -2,52 +2,29 @@ package br.com.digitalnews.digitalnews.fragments;
 
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import br.com.digitalnews.digitalnews.R;
+import br.com.digitalhouse.app.R;
 
+/**
+ * A simple {@link Fragment} subclass.
+ */
 public class ExplorerFragment extends Fragment {
 
 
     public ExplorerFragment() {
-    }
-
-    public static ExplorerFragment newInstance(int image, String titulo) {
-
-        Bundle args = new Bundle();
-
-        args.putInt("IMAGE", image);
-        args.putString("TÍTULO", titulo);
-
-        ExplorerFragment fragment = new ExplorerFragment();
-        fragment.setArguments(args);
-        return fragment;
+        // Required empty public constructor
     }
 
 
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_view_pager, container, false);
-
-        ImageView imageNoticia = view.findViewById(R.id.image_view_pager);
-        TextView titulo = view.findViewById(R.id.titulo_noticia_view_pager);
-
-        int imageResource = getArguments().getInt("IMAGE");
-        String textTitle = getArguments().getString("TÍTULO");
-
-        imageNoticia.setImageResource(imageResource);
-        titulo.setText(textTitle);
-
-        return view;
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_explorer, container, false);
     }
 
 }
-
