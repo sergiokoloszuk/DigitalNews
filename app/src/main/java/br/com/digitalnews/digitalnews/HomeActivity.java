@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import br.com.digitalnews.digitalnews.fragments.ExplorerFragment;
 import br.com.digitalnews.digitalnews.fragments.FragmentForYou;
 import br.com.digitalnews.digitalnews.fragments.NotificationsFragment;
 import br.com.digitalnews.digitalnews.fragments.PerfilFragment;
@@ -30,7 +31,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
                 case R.id.navigation_home:
                     return true;
                 case R.id.navigation_foryou:
-                    startActivity(new Intent(HomeActivity.this, ExplorerActivity.class));
+                    replaceFragment(new ExplorerFragment());
                     return true;
                 case R.id.navigation_search:
                     return true;

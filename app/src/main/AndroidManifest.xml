@@ -28,10 +28,6 @@
             android:label="REGISTER" />
 
         <activity
-            android:name="br.com.digitalhouse.app.PerfilActivity"
-            android:label="@string/title_activity_perfil"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity
             android:name=".ThemesActivity"
             android:label="Seja bem vindo!" />
         <activity
