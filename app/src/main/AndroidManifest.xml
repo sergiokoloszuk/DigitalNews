@@ -34,6 +34,8 @@
             android:name=".HomeActivity"
             android:label="FOR YOU" />
         <activity android:name=".NoticiaActivity"/>
+        <activity android:name=".ExplorerActivity"
+            android:label="Explorar"/>
 
     </application>
 

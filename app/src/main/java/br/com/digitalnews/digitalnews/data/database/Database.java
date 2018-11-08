@@ -1,11 +1,11 @@
 package br.com.digitalnews.digitalnews.data.database;
 
-        import android.arch.persistence.room.Room;
-        import android.arch.persistence.room.RoomDatabase;
-        import android.arch.persistence.room.TypeConverters;
-        import android.content.Context;
-        import br.com.digitalnews.digitalnews.interfaces.ArticleDAO;
-        import br.com.digitalnews.digitalnews.model.Article;
+import android.arch.persistence.room.Room;
+import android.arch.persistence.room.RoomDatabase;
+import android.arch.persistence.room.TypeConverters;
+import android.content.Context;
+import br.com.digitalnews.digitalnews.interfaces.ArticleDAO;
+import br.com.digitalnews.digitalnews.model.Article;
 
 @android.arch.persistence.room.Database(entities = {Article.class}, version = 1, exportSchema = false)
 @TypeConverters(Converters.class)
