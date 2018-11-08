@@ -42,20 +42,6 @@ public class Converters {
         return gson.toJson(list);
     }
 
-    /// Type converter para uam lista da classe de comentários
-    @TypeConverter
-    public List<Comment> fromComment(String value) {
-        Type listType = (Type) new TypeToken<List<Comment>>() {
-        }.getType();
-        return new Gson().fromJson(value, listType);
-    }
-
-    @TypeConverter
-    public String fromComment(List<Comment> list) {
-        Gson gson = new Gson();
-        return gson.toJson(list);
-    }
-
     @TypeConverter
     public Source fromSource(String value) {
         Type listType = (Type) new TypeToken<Source>() {
