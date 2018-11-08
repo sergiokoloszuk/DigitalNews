@@ -1,4 +1,4 @@
-package br.com.digitalnews.digitalnews;
+package br.com.digitalnews.digitalnews.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import br.com.digitalnews.digitalnews.R;
 import br.com.digitalnews.digitalnews.fragments.ExplorerFragment;
 import br.com.digitalnews.digitalnews.fragments.FragmentForYou;
 import br.com.digitalnews.digitalnews.fragments.NotificationsFragment;

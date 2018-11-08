@@ -1,4 +1,4 @@
-package br.com.digitalhouse.mercadolivremvvm.util;
+package br.com.digitalnews.digitalnews.util;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
