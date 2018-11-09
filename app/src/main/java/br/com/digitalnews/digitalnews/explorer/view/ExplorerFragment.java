@@ -1,8 +1,10 @@
-package br.com.digitalnews.digitalnews.fragments;
+package br.com.digitalnews.digitalnews.explorer.view;
 
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
@@ -18,6 +20,8 @@ import java.util.List;
 import br.com.digitalnews.digitalnews.R;
 import br.com.digitalnews.digitalnews.adapters.RecyclerViewAdapterExplorerNoticias;
 import br.com.digitalnews.digitalnews.adapters.ViewPagerAdapterExplorer;
+import br.com.digitalnews.digitalnews.explorer.viewmodel.ExplorerFragViewModel;
+import br.com.digitalnews.digitalnews.fragments.ViewPagerExplorerFragment;
 import br.com.digitalnews.digitalnews.model.NoticiaExplorer;
 
 /**
@@ -28,11 +32,18 @@ public class ExplorerFragment extends Fragment {
 
     private ViewPager viewPager;
     private RecyclerView recyclerView;
+    private ExplorerFragViewModel viewModel;
 
     public ExplorerFragment() {
         // Required empty public constructor
     }
 
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        viewModel= ViewModelProviders.of(this).get(ExplorerFragViewModel.class);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,11 +59,13 @@ public class ExplorerFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.recycler_view);
 
-        RecyclerViewAdapterExplorerNoticias adapter = new RecyclerViewAdapterExplorerNoticias(getListNoticias());
+        RecyclerViewAdapterExplorerNoticias adapter = new RecyclerViewAdapterExplorerNoticias(new ArrayList<NoticiaExplorer>());
         LinearLayoutManager linearLayoutManager = new GridLayoutManager(getContext(),2);
 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(linearLayoutManager);
+
+        viewModel.getCategories();
         return view;
     }
 
@@ -67,22 +80,5 @@ public class ExplorerFragment extends Fragment {
         return fragments;
     }
 
-    private List<NoticiaExplorer> getListNoticias() {
-        List<NoticiaExplorer> noticiaExplorerList = new ArrayList<>();
 
-        noticiaExplorerList.add(new NoticiaExplorer(R.drawable.news_3));
-        noticiaExplorerList.add(new NoticiaExplorer(R.drawable.news_4));
-        noticiaExplorerList.add(new NoticiaExplorer(R.drawable.news_5));
-        noticiaExplorerList.add(new NoticiaExplorer(R.drawable.news_3));
-        noticiaExplorerList.add(new NoticiaExplorer(R.drawable.news_4));
-        noticiaExplorerList.add(new NoticiaExplorer(R.drawable.news_5));
-        noticiaExplorerList.add(new NoticiaExplorer(R.drawable.news_3));
-        noticiaExplorerList.add(new NoticiaExplorer(R.drawable.news_4));
-        noticiaExplorerList.add(new NoticiaExplorer(R.drawable.news_5));
-        noticiaExplorerList.add(new NoticiaExplorer(R.drawable.news_3));
-        noticiaExplorerList.add(new NoticiaExplorer(R.drawable.news_4));
-        noticiaExplorerList.add(new NoticiaExplorer(R.drawable.news_5));
-
-        return noticiaExplorerList;
-    }
 }

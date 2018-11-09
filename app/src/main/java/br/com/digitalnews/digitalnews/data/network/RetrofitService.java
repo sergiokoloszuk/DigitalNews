@@ -5,7 +5,6 @@ import com.facebook.stetho.okhttp3.StethoInterceptor;
 import java.util.concurrent.TimeUnit;
 
 import br.com.digitalnews.digitalnews.BuildConfig;
-import br.com.digitalnews.digitalnews.interfaces.API;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;

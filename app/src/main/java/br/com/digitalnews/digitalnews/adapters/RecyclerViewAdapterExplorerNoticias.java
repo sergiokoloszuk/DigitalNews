@@ -55,4 +55,9 @@ public class RecyclerViewAdapterExplorerNoticias extends RecyclerView.Adapter<Re
             imageView.setImageResource(noticias.getImage());
         }
     }
+
+    public void update(List<NoticiaExplorer> noticias) {
+        this.noticias=noticias;
+        notifyDataSetChanged();
+    }
 }
