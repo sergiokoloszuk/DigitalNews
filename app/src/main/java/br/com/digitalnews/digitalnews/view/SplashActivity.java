@@ -1,4 +1,4 @@
-package br.com.digitalnews.digitalnews;
+package br.com.digitalnews.digitalnews.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
+
+import br.com.digitalnews.digitalnews.R;
 
 public class SplashActivity extends AppCompatActivity {
     private ImageView imageView;

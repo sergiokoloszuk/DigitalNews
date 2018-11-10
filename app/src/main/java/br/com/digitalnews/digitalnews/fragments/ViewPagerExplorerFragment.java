@@ -13,20 +13,20 @@ import android.widget.TextView;
 
 import br.com.digitalnews.digitalnews.R;
 
-public class ExplorerFragment extends Fragment {
+public class ViewPagerExplorerFragment extends Fragment {
 
 
-    public ExplorerFragment() {
+    public ViewPagerExplorerFragment() {
     }
 
-    public static ExplorerFragment newInstance(int image, String titulo) {
+    public static ViewPagerExplorerFragment newInstance(int image, String titulo) {
 
         Bundle args = new Bundle();
 
         args.putInt("IMAGE", image);
         args.putString("TÍTULO", titulo);
 
-        ExplorerFragment fragment = new ExplorerFragment();
+        ViewPagerExplorerFragment fragment = new ViewPagerExplorerFragment();
         fragment.setArguments(args);
         return fragment;
     }
