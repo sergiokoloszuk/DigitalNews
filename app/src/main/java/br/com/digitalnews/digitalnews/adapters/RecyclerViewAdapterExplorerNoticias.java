@@ -6,18 +6,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.List;
 
 import br.com.digitalnews.digitalnews.R;
-import br.com.digitalnews.digitalnews.model.NoticiaExplorer;
+import br.com.digitalnews.digitalnews.explorer.model.Source;
 
 public class RecyclerViewAdapterExplorerNoticias extends RecyclerView.Adapter<RecyclerViewAdapterExplorerNoticias.ViewHolder> {
 
-    private List<NoticiaExplorer> noticias;
+    private List<Source> sources;
 
-    public RecyclerViewAdapterExplorerNoticias(List<NoticiaExplorer> noticias) {
-        this.noticias = noticias;
+    public RecyclerViewAdapterExplorerNoticias(List<Source> sources) {
+        this.sources = sources;
     }
 
     @NonNull
@@ -30,29 +31,37 @@ public class RecyclerViewAdapterExplorerNoticias extends RecyclerView.Adapter<Re
     //método que passa a "pessoa" para o método bind()
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        NoticiaExplorer noticia = noticias.get(position);
-        holder.bind(noticia);
+        Source source = sources.get(position);
+        holder.bind(source);
     }
 
     //Retorna o tamanho da lista
     @Override
     public int getItemCount() {
-        return noticias.size();
+        return sources.size();
     }
 
     // criar ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder {
         private ImageView imageView;
+        private TextView sourceCategory;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.news_noticias);
+            sourceCategory = itemView.findViewById(R.id.source_category);
         }
 
         //método bind
-        public void bind(NoticiaExplorer noticias){
-            imageView.setImageResource(noticias.getImage());
+        public void bind(Source source){
+            //imageView.setImageResource(source.ge());
+            sourceCategory.setText(source.getCategory());
         }
+    }
+
+    public void update(List<Source> sources) {
+        this.sources = sources;
+        notifyDataSetChanged();
     }
 }
