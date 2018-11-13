@@ -1,6 +1,7 @@
 package br.com.digitalnews.digitalnews.explorer.view;
 
 
+import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -20,6 +21,7 @@ import java.util.List;
 import br.com.digitalnews.digitalnews.R;
 import br.com.digitalnews.digitalnews.adapters.RecyclerViewAdapterExplorerNoticias;
 import br.com.digitalnews.digitalnews.adapters.ViewPagerAdapterExplorer;
+import br.com.digitalnews.digitalnews.explorer.model.Source;
 import br.com.digitalnews.digitalnews.explorer.viewmodel.ExplorerFragViewModel;
 import br.com.digitalnews.digitalnews.fragments.ViewPagerExplorerFragment;
 import br.com.digitalnews.digitalnews.model.NoticiaExplorer;
@@ -59,13 +61,21 @@ public class ExplorerFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.recycler_view);
 
-        RecyclerViewAdapterExplorerNoticias adapter = new RecyclerViewAdapterExplorerNoticias(new ArrayList<NoticiaExplorer>());
+        final RecyclerViewAdapterExplorerNoticias adapter = new RecyclerViewAdapterExplorerNoticias(new ArrayList<Source>());
         LinearLayoutManager linearLayoutManager = new GridLayoutManager(getContext(),2);
 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(linearLayoutManager);
 
         viewModel.getCategories();
+
+        viewModel.categoryLiveData.observe(this, new Observer<List<Source>>() {
+            @Override
+            public void onChanged(@Nullable List<Source> sources) {
+                adapter.update(sources);
+            }
+        });
+
         return view;
     }
 
