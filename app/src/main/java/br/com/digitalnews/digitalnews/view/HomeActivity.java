@@ -11,6 +11,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import br.com.digitalnews.digitalnews.explorer.view.ExplorerFragment;
 
+import br.com.digitalnews.digitalnews.explorer.view.ExplorerFragment;
 import br.com.digitalnews.digitalnews.fragments.FragmentForYou;
 import br.com.digitalnews.digitalnews.fragments.NotificationsFragment;
 import br.com.digitalnews.digitalnews.fragments.PerfilFragment;
