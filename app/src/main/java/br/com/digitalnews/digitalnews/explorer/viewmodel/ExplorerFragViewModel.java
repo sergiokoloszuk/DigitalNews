@@ -11,7 +11,6 @@ import java.util.List;
 import br.com.digitalnews.digitalnews.data.local.database.NewsDatabase;
 import br.com.digitalnews.digitalnews.explorer.model.CategoryResponse;
 import br.com.digitalnews.digitalnews.explorer.model.Source;
-import br.com.digitalnews.digitalnews.model.Article;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
@@ -34,11 +33,11 @@ public class ExplorerFragViewModel extends AndroidViewModel{
     MutableLiveData<Boolean> isLoading = new MutableLiveData<>();
     private CompositeDisposable disposable = new CompositeDisposable();
 
-    public void getCategories( ){
+    public void getCategories(){
 
         if(isNetworkConnected(getApplication())){
             disposable.add(
-                    getApiService().getCategory(API_KEY)
+                    getApiService().getCategories(API_KEY)
                             .map(new Function<CategoryResponse, CategoryResponse>() {
                                 @Override
                                 public CategoryResponse apply(CategoryResponse response) throws Exception {

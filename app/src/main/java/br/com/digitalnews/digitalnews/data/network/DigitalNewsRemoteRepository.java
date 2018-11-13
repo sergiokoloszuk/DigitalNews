@@ -5,7 +5,7 @@ import io.reactivex.Observable;
 
 public class DigitalNewsRemoteRepository {
 
-    public Observable<Article> searchItems(String item) {
+    /*public Observable<Article> searchItems(String item) {
         return RetrofitService.getApiService().searchItem(item);
-    }
+    }*/
 }
