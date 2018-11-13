@@ -1,11 +1,17 @@
 
 package br.com.digitalnews.digitalnews.model;
 
-import com.google.gson.annotations.Expose;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
 
+import com.google.gson.annotations.Expose;
+@Entity
 public class Source {
 
     @Expose
+    @PrimaryKey
+    @NonNull
     private String id;
 
     @Expose

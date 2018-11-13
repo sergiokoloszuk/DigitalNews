@@ -51,7 +51,7 @@ public class RecycleNoticiasAdapter extends RecyclerView.Adapter<RecycleNoticias
         public ViewHolder(View itemView) {
             super(itemView);
 
-            imageViewNoticias = itemView.findViewById(R.id.noticias);
+            //imageViewNoticias = itemView.findViewById(R.id.noticias);
             textViewTitle = itemView.findViewById(R.id.title);
             textViewSubtitle = itemView.findViewById(R.id.subtitle);
         }
