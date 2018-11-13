@@ -3,10 +3,11 @@ package br.com.digitalnews.digitalnews.explorer.model;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
 
 import com.google.gson.annotations.Expose;
 
-@Entity(tableName = "Sources")
+@Entity(tableName = "sources")
 public class Source {
 
     @Expose
@@ -17,6 +18,7 @@ public class Source {
     private String description;
     @Expose
     @PrimaryKey
+    @NonNull
     private String id;
     @Expose
     private String language;

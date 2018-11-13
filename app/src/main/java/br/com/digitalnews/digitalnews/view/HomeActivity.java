@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import br.com.digitalnews.digitalnews.explorer.view.ExplorerFragment;
 
 import br.com.digitalnews.digitalnews.explorer.view.ExplorerFragment;
 import br.com.digitalnews.digitalnews.fragments.FragmentForYou;

@@ -33,5 +33,5 @@ public interface SourceDAO {
     Flowable<List<Source>> getAll();
 
     @Query("Select * from sources where id = :id")
-    Article getById(long id);
+    Source getById(long id);
 }
