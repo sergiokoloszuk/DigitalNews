@@ -13,4 +13,10 @@ public interface API {
 
     @GET("v2/everything")
     Observable<Article> getArticles(@Query("q") String query, @Query("apiKey") String apiKey);
+
+    @GET("v2/top-headlines")
+    Observable<Article> getendpoint (@Query("q") String query,@Query("country")String country,
+                                     @Query("apikey")String apikey );
+
+    Observable<Article> searchItem(String item);
 }

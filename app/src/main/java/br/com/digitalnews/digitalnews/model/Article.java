@@ -1,121 +1,126 @@
 
 package br.com.digitalnews.digitalnews.model;
 
-import android.arch.persistence.room.ColumnInfo;
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.PrimaryKey;
-
+import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 
-@Entity(tableName = "articles")
+@Generated("net.hexar.json2pojo")
+@SuppressWarnings("unused")
 public class Article {
 
-    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id")
-    private long id;
-
-    @ColumnInfo(name = "author")
     @Expose
     private String author;
-
-    @ColumnInfo(name = "content")
     @Expose
     private String content;
-
-    @ColumnInfo(name = "description")
     @Expose
     private String description;
-
-    @ColumnInfo(name = "publishedAt")
     @Expose
     private String publishedAt;
-
-    @ColumnInfo(name = "source")
     @Expose
     private Source source;
-
-    @ColumnInfo(name = "title")
     @Expose
     private String title;
-
-    @ColumnInfo(name = "url")
     @Expose
     private String url;
-
-    @ColumnInfo(name = "urlToImage")
     @Expose
     private String urlToImage;
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public String getAuthor() {
         return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
     }
 
     public String getContent() {
         return content;
     }
 
-    public void setContent(String content) {
-        this.content = content;
-    }
-
     public String getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public String getPublishedAt() {
         return publishedAt;
     }
 
-    public void setPublishedAt(String publishedAt) {
-        this.publishedAt = publishedAt;
-    }
-
     public Source getSource() {
         return source;
-    }
-
-    public void setSource(Source source) {
-        this.source = source;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public String getUrl() {
         return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
     }
 
     public String getUrlToImage() {
         return urlToImage;
     }
 
-    public void setUrlToImage(String urlToImage) {
-        this.urlToImage = urlToImage;
+    public static class Builder {
+
+        private String author;
+        private String content;
+        private String description;
+        private String publishedAt;
+        private Source source;
+        private String title;
+        private String url;
+        private String urlToImage;
+
+        public Article.Builder withAuthor(String author) {
+            this.author = author;
+            return this;
+        }
+
+        public Article.Builder withContent(String content) {
+            this.content = content;
+            return this;
+        }
+
+        public Article.Builder withDescription(String description) {
+            this.description = description;
+            return this;
+        }
+
+        public Article.Builder withPublishedAt(String publishedAt) {
+            this.publishedAt = publishedAt;
+            return this;
+        }
+
+        public Article.Builder withSource(Source source) {
+            this.source = source;
+            return this;
+        }
+
+        public Article.Builder withTitle(String title) {
+            this.title = title;
+            return this;
+        }
+
+        public Article.Builder withUrl(String url) {
+            this.url = url;
+            return this;
+        }
+
+        public Article.Builder withUrlToImage(String urlToImage) {
+            this.urlToImage = urlToImage;
+            return this;
+        }
+
+        public Article build() {
+            Article article = new Article();
+            article.author = author;
+            article.content = content;
+            article.description = description;
+            article.publishedAt = publishedAt;
+            article.source = source;
+            article.title = title;
+            article.url = url;
+            article.urlToImage = urlToImage;
+            return article;
+        }
+
     }
 
 }

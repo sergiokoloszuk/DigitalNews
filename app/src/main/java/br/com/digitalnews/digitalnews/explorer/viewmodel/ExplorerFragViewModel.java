@@ -4,7 +4,6 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.MutableLiveData;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import java.util.List;
 
@@ -12,6 +11,7 @@ import br.com.digitalnews.digitalnews.data.local.database.NewsDatabase;
 import br.com.digitalnews.digitalnews.explorer.model.CategoryResponse;
 import br.com.digitalnews.digitalnews.explorer.model.Source;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import br.com.digitalnews.digitalnews.model.Article;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
