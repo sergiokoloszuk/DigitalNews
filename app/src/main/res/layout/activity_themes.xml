@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_marginTop="16dp"
-    tools:context="br.com.digitalnews.digitalnews.view.ThemesActivity">
+    tools:context="br.com.digitalnews.digitalnews.ThemesActivity">
 
     <TextView
         android:id="@+id/textViewThemes"

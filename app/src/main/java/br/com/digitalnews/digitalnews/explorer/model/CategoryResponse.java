@@ -7,16 +7,16 @@ import com.google.gson.annotations.Expose;
 public class CategoryResponse {
 
     @Expose
-    private List<Source> sources;
+    private List<ExploreSource> exploreSources;
     @Expose
     private String status;
 
-    public List<Source> getSources() {
-        return sources;
+    public List<ExploreSource> getExploreSources() {
+        return exploreSources;
     }
 
-    public void setSources(List<Source> sources) {
-        this.sources = sources;
+    public void setExploreSources(List<ExploreSource> exploreSources) {
+        this.exploreSources = exploreSources;
     }
 
     public String getStatus() {

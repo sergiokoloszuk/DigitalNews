@@ -10,31 +10,25 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".view.SplashActivity"
+            android:name=".SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.MainActivity" />
-        <activity
-            android:name=".view.LoginActivity"
-            android:label="LOGIN" />
-        <activity
-            android:name=".view.RegisterActivity"
-            android:label="REGISTER" />
-
-        <activity
-            android:name=".view.ThemesActivity"
-            android:label="Seja bem vindo!" />
-        <activity
-            android:name=".HomeActivity"
-            android:label="FOR YOU" />
-        <activity android:name=".view.NoticiaActivity"/>
-
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".LoginActivity">
+        </activity>
+        <activity android:name=".RegisterActivity">
+        </activity>
+        <activity android:name=".ThemesActivity">
+        </activity>
+        <activity android:name=".CompleteArticleActivity">
+        </activity>
     </application>
 
 </manifest>
