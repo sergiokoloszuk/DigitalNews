@@ -26,9 +26,9 @@ public interface TopHeadlineArticleDAO {
     @Delete
     void delete(TopHeadlinesArticle article);
 
-    @Query("Select * from topHeadlinesArticles limit 30")
+    @Query("Select * from TopHeadlinesArticles limit 30")
     Flowable<List<TopHeadlinesArticle>> getAll();
 
-    @Query("Select * from topHeadlinesArticles where id = :id")
+    @Query("Select * from TopHeadlinesArticles where id = :id")
     TopHeadlinesArticle getById(long id);
 }

@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         container = findViewById(R.id.container);
 
         //TODO ajustar isto para HomeFragment
-        replaceFragment(new ProfileFragment());
+        replaceFragment(new HomeFragment());
     }
 
     private void replaceFragment(Fragment fragment) {

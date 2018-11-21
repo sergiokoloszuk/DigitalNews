@@ -29,7 +29,7 @@ public class HomeViewModel extends AndroidViewModel{
         super(application);
     }
 
-    public MutableLiveData topHeadlinesArticleLiveData = new MutableLiveData<>();
+    public MutableLiveData<List<TopHeadlinesArticle>> TopHeadLinesArticlesLiveData = new MutableLiveData<>();
     public MutableLiveData<List<TopHeadlinesSource>> topHeadlinesSourceLiveData = new MutableLiveData<>();
     MutableLiveData<Throwable> liveDataError = new MutableLiveData<>();
     MutableLiveData<Boolean> isLoading = new MutableLiveData<>();
@@ -39,11 +39,11 @@ public class HomeViewModel extends AndroidViewModel{
 
         if(isNetworkConnected(getApplication())){
             disposable.add(
-                    getApiService().getTopHeadlines("brazil", API_KEY)
+                    getApiService().getTopHeadlines("br", API_KEY)
                             .map(new Function<TopHeadlinesResponse, TopHeadlinesResponse>() {
                                 @Override
                                 public TopHeadlinesResponse apply(TopHeadlinesResponse response) throws Exception {
-                                    return saveResponse(response);
+                                    return saveArticles(response);
                                 }
                             })
                             .subscribeOn(Schedulers.newThread())
@@ -51,7 +51,7 @@ public class HomeViewModel extends AndroidViewModel{
                             .subscribe(new Consumer<TopHeadlinesResponse>() {
                                 @Override
                                 public void accept(TopHeadlinesResponse response) throws Exception {
-                                    topHeadlinesArticleLiveData.setValue(response.getTopHeadlinesArticles());
+                                    TopHeadLinesArticlesLiveData.setValue(response.getTopHeadlinesArticles());
                                 }
                             }, new Consumer<Throwable>() {
                                 @Override
@@ -67,8 +67,8 @@ public class HomeViewModel extends AndroidViewModel{
                             .observeOn(AndroidSchedulers.mainThread())
                             .subscribe(new Consumer<List<TopHeadlinesArticle>>() {
                                 @Override
-                                public void accept(List<TopHeadlinesArticle> topHeadlinesArticles) throws Exception {
-                                    topHeadlinesArticleLiveData.setValue(topHeadlinesArticles);
+                                public void accept(List<TopHeadlinesArticle> articleList) throws Exception {
+                                    TopHeadLinesArticlesLiveData.setValue(articleList);
                                 }
                             }, new Consumer<Throwable>() {
                                 @Override
@@ -81,7 +81,7 @@ public class HomeViewModel extends AndroidViewModel{
 
     }
 
-    private TopHeadlinesResponse saveResponse(TopHeadlinesResponse response) {
+    private TopHeadlinesResponse saveArticles(TopHeadlinesResponse response) {
         NewsDatabase.getDatabase(getApplication()).getTopHeadlineArticleDAO().insert(response.getTopHeadlinesArticles());
         return response;
     }

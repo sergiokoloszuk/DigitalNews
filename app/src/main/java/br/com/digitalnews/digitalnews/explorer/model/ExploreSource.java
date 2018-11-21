@@ -12,18 +12,24 @@ public class ExploreSource {
 
     @Expose
     private String category;
+
     @Expose
     private String country;
+
     @Expose
     private String description;
+
     @Expose
     @PrimaryKey
     @NonNull
     private String id;
+
     @Expose
     private String language;
+
     @Expose
     private String name;
+
     @Expose
     private String url;
 

@@ -3,11 +3,14 @@ package br.com.digitalnews.digitalnews.explorer.model;
 
 import java.util.List;
 import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class CategoryResponse {
 
     @Expose
+    @SerializedName("sources")
     private List<ExploreSource> exploreSources;
+
     @Expose
     private String status;
 

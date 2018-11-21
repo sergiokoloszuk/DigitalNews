@@ -3,16 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginEnd="16dp"
     android:layout_marginStart="16dp"
-    android:layout_marginTop="8dp">
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="16dp">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/noticias_grid"
+            android:id="@+id/img_news"
             android:layout_width="0dp"
             android:layout_height="180dp"
             android:scaleType="centerCrop"
@@ -34,35 +34,38 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/textViewTitle"
+            android:id="@+id/textview_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="224dp"
             android:layout_marginStart="8dp"
-            android:text="Title"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="224dp"
+            android:layout_marginBottom="4dp"
+            android:text="Título"
             android:textColor="#FFF"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/textViewSubtitle"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textview_description"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/textViewSubtitle"
+            android:id="@+id/textview_description"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:text="Subtitle"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="Descrição"
             android:textColor="#FFF"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/noticias_grid"
+            app:layout_constraintBottom_toBottomOf="@+id/img_news"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
     </android.support.constraint.ConstraintLayout>

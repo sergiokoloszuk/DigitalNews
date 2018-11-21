@@ -15,28 +15,25 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.digitalnews.digitalnews.adapters.RecycleNewsAdapter;
 import br.com.digitalnews.digitalnews.R;
-import br.com.digitalnews.digitalnews.home.model.TopHeadlinesResponse;
+import br.com.digitalnews.digitalnews.adapters.RecyclerViewHomeAdapter;
+import br.com.digitalnews.digitalnews.home.model.TopHeadlinesArticle;
 import br.com.digitalnews.digitalnews.home.viewmodel.HomeViewModel;
 
 public class HomeFragment extends Fragment {
 
-    private List<TopHeadlinesResponse> list = new ArrayList<>();
     private HomeViewModel viewModel;
 
     public HomeFragment() {
 
     }
 
-    public static Fragment newInstance(int noticia_tres, String message) {
-        return null;
-    }
+    // TODO analisar a necessidade de se colocar um newInstace para este fragment
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        viewModel= ViewModelProviders.of(this).get(HomeViewModel.class);
+        viewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
     }
 
     @Nullable
@@ -44,29 +41,20 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        RecyclerView recyclerView = view.findViewById(R.id.recycler_foryou);
-        final RecycleNewsAdapter adapter = new RecycleNewsAdapter(getResponses());
+        RecyclerView recyclerView = view.findViewById(R.id.recycler_home);
+        final RecyclerViewHomeAdapter adapter = new RecyclerViewHomeAdapter(new ArrayList<TopHeadlinesArticle>());
         GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 2);
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
         viewModel.getArticles();
-        viewModel.topHeadlinesArticleLiveData.observe(this, new Observer<List<TopHeadlinesResponse>>() {
+        viewModel.TopHeadLinesArticlesLiveData.observe(this, new Observer<List<TopHeadlinesArticle>>() {
             @Override
-            public void onChanged(@Nullable List<TopHeadlinesResponse> topHeadlinesResponses) {
-                adapter.setResponses(topHeadlinesResponses);
+            public void onChanged(@Nullable List<TopHeadlinesArticle> articleList) {
+                adapter.update(articleList);
             }
         });
-
         return view;
-    }
-
-    private List<TopHeadlinesResponse> getResponses() {
-
-        while (list.size() < 30){
-            list.add(new TopHeadlinesResponse());
-        }
-        return list;
     }
 }

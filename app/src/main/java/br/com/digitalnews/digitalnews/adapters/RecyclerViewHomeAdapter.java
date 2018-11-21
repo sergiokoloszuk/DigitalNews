@@ -11,16 +11,14 @@ import android.widget.TextView;
 import java.util.List;
 
 import br.com.digitalnews.digitalnews.R;
-import br.com.digitalnews.digitalnews.home.model.TopHeadlinesResponse;
+import br.com.digitalnews.digitalnews.home.model.TopHeadlinesArticle;
 
 
-public class RecycleNewsAdapter extends RecyclerView.Adapter<RecycleNewsAdapter.ViewHolder> {
+public class RecyclerViewHomeAdapter extends RecyclerView.Adapter<RecyclerViewHomeAdapter.ViewHolder> {
+    private List<TopHeadlinesArticle> articleList;
 
-    private List<TopHeadlinesResponse> topHeadlinesResponseList;
-    private int position = 0;
-
-    public RecycleNewsAdapter(List<TopHeadlinesResponse> topHeadlinesResponseList) {
-        this.topHeadlinesResponseList = topHeadlinesResponseList;
+    public RecyclerViewHomeAdapter(List<TopHeadlinesArticle> articleList) {
+        this.articleList = articleList;
     }
 
 
@@ -33,24 +31,24 @@ public class RecycleNewsAdapter extends RecyclerView.Adapter<RecycleNewsAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        TopHeadlinesResponse response = topHeadlinesResponseList.get(position);
-        holder.bind(response);
-        this.position = position;
+        TopHeadlinesArticle article = articleList.get(position);
+        holder.bind(article);
     }
 
     @Override
     public int getItemCount() {
-        return topHeadlinesResponseList.size();
+        return articleList.size();
     }
 
-    public void setResponses(List<TopHeadlinesResponse> responses){
-        if (topHeadlinesResponseList.size() == 0){
-            this.topHeadlinesResponseList = topHeadlinesResponseList;
+    public void setArticles(List<TopHeadlinesArticle> articleList){
+        if (articleList.size() == 0){
+            this.articleList = articleList;
         } else {
-            this.topHeadlinesResponseList.addAll(topHeadlinesResponseList);
+            this.articleList.addAll(articleList);
             notifyDataSetChanged();
         }
     }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView imageViewNoticias;
@@ -61,12 +59,17 @@ public class RecycleNewsAdapter extends RecyclerView.Adapter<RecycleNewsAdapter.
             super(itemView);
             //imageViewNoticias = itemView.findViewById(R.id.);
             textViewTitle = itemView.findViewById(R.id.title);
-            textViewDescription = itemView.findViewById(R.id.subtitle);
+            textViewDescription = itemView.findViewById(R.id.description);
         }
 
-        public void bind(TopHeadlinesResponse response) {
-            textViewTitle.setText(response.getTopHeadlinesArticles().get(position).getTitle());
-            textViewDescription.setText(response.getTopHeadlinesArticles().get(position).getDescription().toString());
+        public void bind(TopHeadlinesArticle article) {
+            textViewTitle.setText(article.getTitle());
+            textViewDescription.setText(article.getDescription());
         }
+    }
+
+    public void update(List<TopHeadlinesArticle> articleList) {
+        this.articleList = articleList;
+        notifyDataSetChanged();
     }
 }

@@ -24,18 +24,16 @@ public class RecyclerViewAdapterExplorerNews extends RecyclerView.Adapter<Recycl
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_explorer_categories_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_explorer_category_item, parent, false);
         return new ViewHolder(view);
     }
 
-    //método que passa a "pessoa" para o método bind()
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         ExploreSource exploreSource = exploreSources.get(position);
         holder.bind(exploreSource);
     }
 
-    //Retorna o tamanho da lista
     @Override
     public int getItemCount() {
         return exploreSources.size();
