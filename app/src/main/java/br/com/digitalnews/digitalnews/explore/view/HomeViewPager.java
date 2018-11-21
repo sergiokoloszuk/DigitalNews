@@ -1,4 +1,4 @@
-package br.com.digitalnews.digitalnews.explorer.view;
+package br.com.digitalnews.digitalnews.explore.view;
 
 
 import android.os.Bundle;
@@ -13,20 +13,20 @@ import android.widget.TextView;
 
 import br.com.digitalnews.digitalnews.R;
 
-public class ViewPagerExplorerFragment extends Fragment {
+public class ExploreViewPager extends Fragment {
 
 
-    public ViewPagerExplorerFragment() {
+    public ExploreViewPager() {
     }
 
-    public static ViewPagerExplorerFragment newInstance(int image, String title) {
+    public static ExploreViewPager newInstance(int image, String title) {
 
         Bundle args = new Bundle();
 
         args.putInt("IMAGE", image);
         args.putString("TITLE", title);
 
-        ViewPagerExplorerFragment fragment = new ViewPagerExplorerFragment();
+        ExploreViewPager fragment = new ExploreViewPager();
         fragment.setArguments(args);
         return fragment;
     }
@@ -35,10 +35,10 @@ public class ViewPagerExplorerFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_view_pager, container, false);
+        View view = inflater.inflate(R.layout.viewpager_explore, container, false);
 
-        ImageView imageNoticia = view.findViewById(R.id.image_view_pager);
-        TextView titulo = view.findViewById(R.id.titulo_noticia_view_pager);
+        ImageView imageNoticia = view.findViewById(R.id.explore_viewpager_image);
+        TextView titulo = view.findViewById(R.id.explore_viewpager_title);
 
         int imageResource = getArguments().getInt("IMAGE");
         String textTitle = getArguments().getString("TITLE");

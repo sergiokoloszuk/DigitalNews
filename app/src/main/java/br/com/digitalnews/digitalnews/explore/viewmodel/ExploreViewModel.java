@@ -1,4 +1,4 @@
-package br.com.digitalnews.digitalnews.explorer.viewmodel;
+package br.com.digitalnews.digitalnews.explore.viewmodel;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
@@ -9,8 +9,8 @@ import android.util.Log;
 import java.util.List;
 
 import br.com.digitalnews.digitalnews.data.local.database.NewsDatabase;
-import br.com.digitalnews.digitalnews.explorer.model.CategoryResponse;
-import br.com.digitalnews.digitalnews.explorer.model.ExploreSource;
+import br.com.digitalnews.digitalnews.explore.model.CategoryResponse;
+import br.com.digitalnews.digitalnews.explore.model.ExploreSource;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
