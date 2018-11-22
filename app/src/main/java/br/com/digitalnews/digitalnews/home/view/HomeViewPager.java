@@ -1,4 +1,4 @@
-package br.com.digitalnews.digitalnews.explore.view;
+package br.com.digitalnews.digitalnews.home.view;
 
 
 import android.os.Bundle;
@@ -11,22 +11,24 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import br.com.digitalnews.digitalnews.R;
 
-public class ViewPagerExplore extends Fragment {
+public class HomeViewPager extends Fragment {
 
 
-    public ViewPagerExplore() {
+    public HomeViewPager() {
     }
 
-    public static ViewPagerExplore newInstance(int image, String title) {
+    public static HomeViewPager newInstance(String imageURL, String title) {
 
         Bundle args = new Bundle();
 
-        args.putInt("IMAGE", image);
+        args.putString("IMAGE_URL", imageURL);
         args.putString("TITLE", title);
 
-        ViewPagerExplore fragment = new ViewPagerExplore();
+        HomeViewPager fragment = new HomeViewPager();
         fragment.setArguments(args);
         return fragment;
     }
@@ -35,16 +37,16 @@ public class ViewPagerExplore extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_view_pager, container, false);
+        View view = inflater.inflate(R.layout.viewpager_home, container, false);
 
-        ImageView imageNoticia = view.findViewById(R.id.image_view_pager);
-        TextView titulo = view.findViewById(R.id.titulo_noticia_view_pager);
+        ImageView image = view.findViewById(R.id.home_viewpager_image);
+        TextView title = view.findViewById(R.id.home_viewpager_title);
 
-        int imageResource = getArguments().getInt("IMAGE");
-        String textTitle = getArguments().getString("TITLE");
+        String imageResource = getArguments().getString("IMAGE_URL");
+        String titleResource = getArguments().getString("TITLE");
 
-        imageNoticia.setImageResource(imageResource);
-        titulo.setText(textTitle);
+        Picasso.get().load(imageResource).into(image);
+        title.setText(titleResource);
 
         return view;
     }

@@ -8,7 +8,7 @@ import android.content.Context;
 import br.com.digitalnews.digitalnews.data.local.dao.ExploreSourceDAO;
 import br.com.digitalnews.digitalnews.data.local.dao.TopHeadlineArticleDAO;
 import br.com.digitalnews.digitalnews.data.local.dao.TopHeadlineSourceDAO;
-import br.com.digitalnews.digitalnews.explorer.model.ExploreSource;
+import br.com.digitalnews.digitalnews.explore.model.ExploreSource;
 import br.com.digitalnews.digitalnews.home.model.TopHeadlinesArticle;
 import br.com.digitalnews.digitalnews.home.model.TopHeadlinesSource;
 

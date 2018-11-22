@@ -21,10 +21,10 @@ import static br.com.digitalnews.digitalnews.data.network.RetrofitService.API_KE
 import static br.com.digitalnews.digitalnews.data.network.RetrofitService.getApiService;
 import static br.com.digitalnews.digitalnews.util.AppUtil.isNetworkConnected;
 
-public class ExplorerViewModel extends AndroidViewModel{
+public class ExploreViewModel extends AndroidViewModel{
 
 
-    public ExplorerViewModel(@NonNull Application application) {
+    public ExploreViewModel(@NonNull Application application) {
         super(application);
     }
 

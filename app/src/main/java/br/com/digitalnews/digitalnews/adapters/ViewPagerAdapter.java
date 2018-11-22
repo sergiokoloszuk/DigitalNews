@@ -6,11 +6,11 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import java.util.List;
 
-public class ExploreViewPagerAdapter extends FragmentStatePagerAdapter {
+public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     private List<Fragment> fragments;
 
-    public ExploreViewPagerAdapter(FragmentManager fm, List<Fragment> fragments) {
+    public ViewPagerAdapter(FragmentManager fm, List<Fragment> fragments) {
         super(fm);
         this.fragments = fragments;
     }
