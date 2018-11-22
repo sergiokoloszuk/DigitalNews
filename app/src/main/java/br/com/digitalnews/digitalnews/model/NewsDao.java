@@ -1,6 +1,4 @@
-
-
-    package br.com.digitalnews.digitalnews.model;
+package br.com.digitalnews.digitalnews.model;
 
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
@@ -11,7 +9,6 @@ import android.arch.persistence.room.Update;
 
 import java.util.List;
 
-import br.com.digitalnews.digitalnews.model.Article;
 import io.reactivex.Flowable;
 
     @Dao
@@ -36,4 +33,4 @@ import io.reactivex.Flowable;
         News getById(long id);
     }
 
-}
+
