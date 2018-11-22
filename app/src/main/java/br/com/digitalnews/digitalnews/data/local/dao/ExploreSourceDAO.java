@@ -9,7 +9,7 @@ import android.arch.persistence.room.Update;
 
 import java.util.List;
 
-import br.com.digitalnews.digitalnews.explorer.model.ExploreSource;
+import br.com.digitalnews.digitalnews.explore.model.ExploreSource;
 import io.reactivex.Flowable;
 
 @Dao

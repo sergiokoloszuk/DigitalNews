@@ -8,16 +8,18 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 import br.com.digitalnews.digitalnews.R;
 import br.com.digitalnews.digitalnews.home.model.TopHeadlinesArticle;
 
 
-public class RecyclerViewHomeAdapter extends RecyclerView.Adapter<RecyclerViewHomeAdapter.ViewHolder> {
+public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerViewAdapter.ViewHolder> {
     private List<TopHeadlinesArticle> articleList;
 
-    public RecyclerViewHomeAdapter(List<TopHeadlinesArticle> articleList) {
+    public HomeRecyclerViewAdapter(List<TopHeadlinesArticle> articleList) {
         this.articleList = articleList;
     }
 
@@ -40,8 +42,8 @@ public class RecyclerViewHomeAdapter extends RecyclerView.Adapter<RecyclerViewHo
         return articleList.size();
     }
 
-    public void setArticles(List<TopHeadlinesArticle> articleList){
-        if (articleList.size() == 0){
+    public void setArticles(List<TopHeadlinesArticle> articleList) {
+        if (articleList.size() == 0) {
             this.articleList = articleList;
         } else {
             this.articleList.addAll(articleList);
@@ -51,18 +53,19 @@ public class RecyclerViewHomeAdapter extends RecyclerView.Adapter<RecyclerViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private ImageView imageViewNoticias;
+        private ImageView imageViewNews;
         private TextView textViewTitle;
         private TextView textViewDescription;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            //imageViewNoticias = itemView.findViewById(R.id.);
+            imageViewNews = itemView.findViewById(R.id.home_news_image);
             textViewTitle = itemView.findViewById(R.id.title);
-            textViewDescription = itemView.findViewById(R.id.description);
+            textViewDescription = itemView.findViewById(R.id.content_preview);
         }
 
         public void bind(TopHeadlinesArticle article) {
+            Picasso.get().load(article.getUrlToImage()).into(imageViewNews);
             textViewTitle.setText(article.getTitle());
             textViewDescription.setText(article.getDescription());
         }

@@ -14,13 +14,13 @@
         android:orientation="vertical">
 
         <android.support.v4.view.ViewPager
-            android:id="@+id/view_pager"
+            android:id="@+id/explore_viewpager"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="@color/cardview_dark_background" />
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler_view"
+            android:id="@+id/explore_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="8dp"

@@ -11,13 +11,13 @@ import android.widget.TextView;
 import java.util.List;
 
 import br.com.digitalnews.digitalnews.R;
-import br.com.digitalnews.digitalnews.explorer.model.ExploreSource;
+import br.com.digitalnews.digitalnews.explore.model.ExploreSource;
 
-public class RecyclerViewAdapterExplorerNews extends RecyclerView.Adapter<RecyclerViewAdapterExplorerNews.ViewHolder> {
+public class ExploreRecyclerViewAdapter extends RecyclerView.Adapter<ExploreRecyclerViewAdapter.ViewHolder> {
 
     private List<ExploreSource> exploreSources;
 
-    public RecyclerViewAdapterExplorerNews(List<ExploreSource> exploreSources) {
+    public ExploreRecyclerViewAdapter(List<ExploreSource> exploreSources) {
         this.exploreSources = exploreSources;
     }
 

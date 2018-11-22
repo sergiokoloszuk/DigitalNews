@@ -1,4 +1,4 @@
-package br.com.digitalnews.digitalnews.explorer.view;
+package br.com.digitalnews.digitalnews.explore.view;
 
 
 import android.arch.lifecycle.Observer;
@@ -19,22 +19,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.digitalnews.digitalnews.R;
-import br.com.digitalnews.digitalnews.adapters.RecyclerViewAdapterExplorerNews;
-import br.com.digitalnews.digitalnews.adapters.ViewPagerAdapterExplorer;
-import br.com.digitalnews.digitalnews.explorer.model.ExploreSource;
-import br.com.digitalnews.digitalnews.explorer.viewmodel.ExplorerViewModel;
+import br.com.digitalnews.digitalnews.adapters.ExploreRecyclerViewAdapter;
+import br.com.digitalnews.digitalnews.adapters.ViewPagerAdapter;
+import br.com.digitalnews.digitalnews.explore.model.ExploreSource;
+import br.com.digitalnews.digitalnews.explore.viewmodel.ExploreViewModel;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ExplorerFragment extends Fragment {
+public class ExploreFragment extends Fragment {
 
 
     private ViewPager viewPager;
     private RecyclerView recyclerView;
-    private ExplorerViewModel viewModel;
+    private ExploreViewModel viewModel;
 
-    public ExplorerFragment() {
+    public ExploreFragment() {
         // Required empty public constructor
     }
 
@@ -42,7 +42,7 @@ public class ExplorerFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        viewModel= ViewModelProviders.of(this).get(ExplorerViewModel.class);
+        viewModel= ViewModelProviders.of(this).get(ExploreViewModel.class);
     }
 
     @Override
@@ -50,16 +50,16 @@ public class ExplorerFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_explorer, container, false);
-        viewPager = view.findViewById(R.id.view_pager);
+        viewPager = view.findViewById(R.id.explore_viewpager);
 
         List<Fragment> fragments = getFragments();
-        ViewPagerAdapterExplorer pagerAdapter = new ViewPagerAdapterExplorer(getActivity().getSupportFragmentManager(), fragments);
+        ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(getActivity().getSupportFragmentManager(), fragments);
 
         viewPager.setAdapter(pagerAdapter);
 
-        recyclerView = view.findViewById(R.id.recycler_view);
+        recyclerView = view.findViewById(R.id.explore_recyclerview);
 
-        final RecyclerViewAdapterExplorerNews adapter = new RecyclerViewAdapterExplorerNews(new ArrayList<ExploreSource>());
+        final ExploreRecyclerViewAdapter adapter = new ExploreRecyclerViewAdapter(new ArrayList<ExploreSource>());
         LinearLayoutManager linearLayoutManager = new GridLayoutManager(getContext(),2);
 
         recyclerView.setAdapter(adapter);
@@ -81,10 +81,10 @@ public class ExplorerFragment extends Fragment {
     private List<Fragment> getFragments() {
         List<Fragment> fragments = new ArrayList<>();
 
-        Fragment fragment = ViewPagerExplorerFragment.newInstance(R.drawable.news_1, "BMW recalls BMW M3, M4 models");
+        Fragment fragment = ExploreViewPager.newInstance(R.drawable.news_1, "BMW recalls BMW M3, M4 models");
 
         fragments.add(fragment);
-        fragments.add(ViewPagerExplorerFragment.newInstance(R.drawable.news_2, "Tesla Model 3"));
+        fragments.add(ExploreViewPager.newInstance(R.drawable.news_2, "Tesla Model 3"));
         return fragments;
     }
 

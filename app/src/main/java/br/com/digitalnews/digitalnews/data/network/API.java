@@ -1,6 +1,6 @@
 package br.com.digitalnews.digitalnews.data.network;
 
-import br.com.digitalnews.digitalnews.explorer.model.CategoryResponse;
+import br.com.digitalnews.digitalnews.explore.model.CategoryResponse;
 import br.com.digitalnews.digitalnews.home.model.TopHeadlinesResponse;
 import io.reactivex.Observable;
 import retrofit2.http.GET;

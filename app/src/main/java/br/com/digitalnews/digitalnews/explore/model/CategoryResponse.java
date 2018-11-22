@@ -1,5 +1,5 @@
 
-package br.com.digitalnews.digitalnews.explorer.model;
+package br.com.digitalnews.digitalnews.explore.model;
 
 import java.util.List;
 import com.google.gson.annotations.Expose;

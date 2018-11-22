@@ -13,7 +13,7 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/img_home_news"
+            android:id="@+id/home_news_image"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:scaleType="centerCrop"
@@ -37,12 +37,12 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/description"
+                android:id="@+id/content_preview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="Descrição"
+                android:text="Primeiras linhas do conteúdo"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textSize="14sp" />
 

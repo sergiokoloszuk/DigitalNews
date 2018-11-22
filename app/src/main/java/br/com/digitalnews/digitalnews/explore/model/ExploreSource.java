@@ -1,5 +1,5 @@
 
-package br.com.digitalnews.digitalnews.explorer.model;
+package br.com.digitalnews.digitalnews.explore.model;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
