@@ -5,13 +5,12 @@ import android.arch.persistence.room.TypeConverter;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import org.w3c.dom.Comment;
-
 import java.util.Date;
 import java.lang.reflect.Type;
 import java.util.List;
 
-import br.com.digitalnews.digitalnews.model.Source;
+import br.com.digitalnews.digitalnews.explorer.model.ExploreSource;
+import br.com.digitalnews.digitalnews.home.model.TopHeadlinesSource;
 
 public class Converters {
     @TypeConverter
@@ -28,7 +27,7 @@ public class Converters {
         return date.getTime();
     }
 
-    /// Type converter para uam lista de String
+    /// Type converter para uma lista de String
     @TypeConverter
     public List<String> fromString(String value) {
         Type listType = (Type) new TypeToken<List<String>>() {
@@ -43,15 +42,42 @@ public class Converters {
     }
 
     @TypeConverter
-    public Source fromSource(String value) {
-        Type listType = (Type) new TypeToken<Source>() {
+    public ExploreSource fromExploreSource(String value) {
+        Type listType = (Type) new TypeToken<ExploreSource>() {
         }.getType();
         return new Gson().fromJson(value, listType);
     }
 
     @TypeConverter
-    public String fromSource(Source source) {
+    public String fromExloreSource(ExploreSource source) {
         Gson gson = new Gson();
         return gson.toJson(source);
+    }
+
+    @TypeConverter
+    public TopHeadlinesSource fromTopHeadlinesSource(String value){
+        Type listType = (Type) new TypeToken<TopHeadlinesSource>() {
+        }.getType();
+        return new Gson().fromJson(value, listType);
+    }
+
+
+    @TypeConverter
+    public String fromTopHeadlinesSource(TopHeadlinesSource source) {
+        Gson gson = new Gson();
+        return gson.toJson(source);
+    }
+
+    @TypeConverter
+    public Object fromObject(String value) {
+        Type listType = (Type) new TypeToken<Object>() {
+        }.getType();
+        return new Gson().fromJson(value, listType);
+    }
+
+    @TypeConverter
+    public String fromObject(Object list) {
+        Gson gson = new Gson();
+        return gson.toJson(list);
     }
 }
