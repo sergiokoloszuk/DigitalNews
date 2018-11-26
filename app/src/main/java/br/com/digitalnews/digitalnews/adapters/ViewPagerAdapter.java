@@ -24,4 +24,9 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     public int getCount() {
         return fragments.size();
     }
+
+    public void update(List<Fragment> fragments){
+        this.fragments = fragments;
+        notifyDataSetChanged();
+    }
 }

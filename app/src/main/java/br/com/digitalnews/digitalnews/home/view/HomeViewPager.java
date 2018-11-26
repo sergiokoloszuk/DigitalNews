@@ -50,6 +50,5 @@ public class HomeViewPager extends Fragment {
 
         return view;
     }
-
 }
 
