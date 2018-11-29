@@ -8,15 +8,12 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-
     <LinearLayout
-
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp"
-        tools:context=".view.LoginActivity">
+        tools:context=".LoginActivity">
 
 
         <android.support.design.widget.TextInputLayout
@@ -30,7 +27,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/karla_regular"
-                android:hint="Username or Email" />
+                android:hint="E-mail"
+                android:inputType="textEmailAddress" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -44,7 +42,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/karla_regular"
-                android:hint="Password" />
+                android:hint="Password"
+                android:inputType="textPassword" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -64,8 +63,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:layout_marginTop="4dp"
-            android:text="Register Now"
-            android:fontFamily="@font/karla_regular"/>
+            android:fontFamily="@font/karla_regular"
+            android:text="Register Now" />
 
 
         <LinearLayout

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:paddingStart="16dp"
     android:paddingEnd="16dp"
-    tools:context=".view.RegisterActivity">
+    tools:context=".RegisterActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageview_logo_user"
@@ -32,8 +32,7 @@
             android:fontFamily="@font/karla_regular"
             android:hint="Name"
             android:inputType="text"
-            android:textColorHint="@color/primary_text"
-            android:textStyle="bold" />
+            android:textColorHint="@color/primary_text" />
     </android.support.design.widget.TextInputLayout>
 
 
@@ -53,8 +52,7 @@
             android:fontFamily="@font/karla_regular"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:textColorHint="@color/primary_text"
-            android:textStyle="bold" />
+            android:textColorHint="@color/primary_text" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -73,8 +71,7 @@
             android:fontFamily="@font/karla_regular"
             android:hint="Password"
             android:inputType="textPassword"
-            android:textColorHint="@color/primary_text"
-            android:textStyle="bold" />
+            android:textColorHint="@color/primary_text" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -91,10 +88,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:fontFamily="@font/karla_regular"
-            android:hint="Repeate Password"
+            android:hint="Repeat Password"
             android:inputType="textPassword"
-            android:textColorHint="@color/primary_text"
-            android:textStyle="bold" />
+            android:textColorHint="@color/primary_text" />
     </android.support.design.widget.TextInputLayout>
 
     <Button
