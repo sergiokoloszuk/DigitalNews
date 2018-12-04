@@ -31,7 +31,7 @@
             android:name=".view.ThemesActivity"
             android:label="Seja bem vindo!" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".view.HomeActivity"
             android:label="FOR YOU" />
         <activity android:name=".view.NoticiaActivity"/>
 

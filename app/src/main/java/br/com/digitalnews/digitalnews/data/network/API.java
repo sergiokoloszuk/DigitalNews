@@ -12,4 +12,6 @@ public interface API {
 
     @GET("v2/everything")
     Observable<Article> getArticles(@Query("q") String query, @Query("apiKey") String apiKey);
+
+    Observable<Article> searchItem(String item);
 }

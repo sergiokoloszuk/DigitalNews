@@ -1,4 +1,4 @@
-package br.com.digitalnews.digitalnews;
+package br.com.digitalnews.digitalnews.view;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import br.com.digitalnews.digitalnews.R;
 import br.com.digitalnews.digitalnews.explorer.view.ExplorerFragment;
 import br.com.digitalnews.digitalnews.fragments.FragmentForYou;
 import br.com.digitalnews.digitalnews.fragments.NotificationsFragment;

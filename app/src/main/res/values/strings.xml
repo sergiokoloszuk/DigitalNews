@@ -16,5 +16,6 @@
     <string name="tab_text_2">Likes</string>
     <string name="tab_text_3">Revistas</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="default_notification_channel_id">default</string>
 
 </resources>

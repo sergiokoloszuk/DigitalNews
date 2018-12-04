@@ -134,6 +134,12 @@
             android:text="Log in with google"
             android:textAllCaps="true" />
 
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="15dp"
+            />
 
     </LinearLayout>
 

@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import br.com.digitalnews.digitalnews.HomeActivity;
 import br.com.digitalnews.digitalnews.R;
 
 public class ThemesActivity extends AppCompatActivity {
