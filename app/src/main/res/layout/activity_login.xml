@@ -47,7 +47,7 @@
 
         </android.support.design.widget.TextInputLayout>
 
-        <Button
+        <com.facebook.login.widget.LoginButton
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -96,7 +96,7 @@
 
         </LinearLayout>
 
-        <Button
+        <com.facebook.login.widget.LoginButton
             android:id="@+id/btn_facebook"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
