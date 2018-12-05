@@ -33,12 +33,10 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
     FirebaseAuth firebaseAuth;
     GoogleApiClient mGoogleApiClient;
-    GoogleSignInClient mGoogleSignInClient;
     private SignInButton signInButton;
     private static final int RC_SIGN_IN = 9001;
     private TextView register;
     private Button btnLogin;
-    private Button btn_google;
 
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -50,7 +48,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
         register = findViewById(R.id.register);
         btnLogin = findViewById(R.id.btn_login);
-        btn_google = findViewById(R.id.btn_google);
         signInButton = (SignInButton) findViewById(R.id.sign_in_button);
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -73,7 +70,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         });
 
         if (firebaseAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
         }
 
     }
