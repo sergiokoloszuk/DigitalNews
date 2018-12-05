@@ -16,8 +16,5 @@
     <string name="tab_text_2">Likes</string>
     <string name="tab_text_3">Revistas</string>
     <string name="section_format">Hello World from section: %1$d</string>
-    <string name="facebook_app_id">508671836268951</string>
-    <string name="fb_login_protocol_scheme">fb508671836268951</string>
-
 
 </resources>
