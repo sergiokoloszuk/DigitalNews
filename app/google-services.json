@@ -1,32 +1,20 @@
 {
   "project_info": {
-<<<<<<< HEAD
     "project_number": "411182435545",
     "firebase_url": "https://digital-news-eaa93.firebaseio.com",
     "project_id": "digital-news-eaa93",
     "storage_bucket": "digital-news-eaa93.appspot.com"
-=======
-    "project_number": "265756596219",
-    "firebase_url": "https://digitalnews-6a7a4.firebaseio.com",
-    "project_id": "digitalnews-6a7a4",
-    "storage_bucket": "digitalnews-6a7a4.appspot.com"
->>>>>>> develop
   },
   "client": [
     {
       "client_info": {
-<<<<<<< HEAD
         "mobilesdk_app_id": "1:411182435545:android:3d6592e232b812ca",
-=======
-        "mobilesdk_app_id": "1:265756596219:android:3d6592e232b812ca",
->>>>>>> develop
         "android_client_info": {
           "package_name": "br.com.digitalhouse.app"
         }
       },
       "oauth_client": [
         {
-<<<<<<< HEAD
           "client_id": "411182435545-mhrcvh98dadeup8ten569e7dg4hr3pg4.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -36,27 +24,12 @@
         },
         {
           "client_id": "411182435545-rrmq8r1e2p3bia59mmpeqdqe8d0cjghn.apps.googleusercontent.com",
-=======
-          "client_id": "265756596219-eqcnffg8psuo0sm5euk78min8cq65mbe.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "br.com.digitalhouse.app",
-            "certificate_hash": "de0273ddb60420c4be7416ad5a29f1fe31701425"
-          }
-        },
-        {
-          "client_id": "265756596219-hr7k6nas3nh138ejt0jg6l58vj51jrr6.apps.googleusercontent.com",
->>>>>>> develop
           "client_type": 3
         }
       ],
       "api_key": [
         {
-<<<<<<< HEAD
           "current_key": "AIzaSyAlyhV6Lv-GDLiz-gydxTXbJlF8Mb5hJ3M"
-=======
-          "current_key": "AIzaSyC4p0Gk03nkFlRKcSWwfKE8Iq2VSCW_ZFc"
->>>>>>> develop
         }
       ],
       "services": {
@@ -67,55 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-<<<<<<< HEAD
               "client_id": "411182435545-rrmq8r1e2p3bia59mmpeqdqe8d0cjghn.apps.googleusercontent.com",
-=======
-              "client_id": "265756596219-hr7k6nas3nh138ejt0jg6l58vj51jrr6.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:265756596219:android:ed418bdbed6f352a",
-        "android_client_info": {
-          "package_name": "br.com.digitalnews.digitalnews"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "265756596219-2sj2pdoforbl5qr1bd1lu4ti7baqd2eg.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "br.com.digitalnews.digitalnews",
-            "certificate_hash": "de0273ddb60420c4be7416ad5a29f1fe31701425"
-          }
-        },
-        {
-          "client_id": "265756596219-hr7k6nas3nh138ejt0jg6l58vj51jrr6.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyC4p0Gk03nkFlRKcSWwfKE8Iq2VSCW_ZFc"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "265756596219-hr7k6nas3nh138ejt0jg6l58vj51jrr6.apps.googleusercontent.com",
->>>>>>> develop
               "client_type": 3
             }
           ]
