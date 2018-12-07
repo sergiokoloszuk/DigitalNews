@@ -2,8 +2,11 @@ package br.com.digitalnews.digitalnews;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import br.com.digitalnews.digitalnews.R;
+import br.com.digitalnews.digitalnews.explore.model.ExploreSource;
+import br.com.digitalnews.digitalnews.home.model.TopHeadlinesArticle;
 
 public class CompleteArticleActivity extends AppCompatActivity {
 
@@ -11,35 +14,8 @@ public class CompleteArticleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complete_article);
-    }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
+        TopHeadlinesArticle article = getIntent().getParcelableExtra("ARTICLE");
+        Toast.makeText(this, article.getTitle(), Toast.LENGTH_SHORT).show();
     }
 }
