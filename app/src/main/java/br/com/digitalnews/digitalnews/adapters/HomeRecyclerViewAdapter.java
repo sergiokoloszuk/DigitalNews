@@ -76,7 +76,12 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
         }
 
         public void bind(TopHeadlinesArticle article) {
-            Picasso.get().load(article.getUrlToImage()).into(imageViewNews);
+            if (article.getUrlToImage() != null && !article.getUrlToImage().isEmpty()) {
+                Picasso.get().load(article.getUrlToImage()).into(imageViewNews);
+            }else {
+                imageViewNews.setImageResource(R.drawable.digital_news);
+            }
+
             textViewTitle.setText(article.getTitle());
             textViewDescription.setText(article.getDescription());
         }
