@@ -1,5 +1,6 @@
 package br.com.digitalnews.digitalnews.adapters;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import br.com.digitalnews.digitalnews.ArticlesActivity;
+import br.com.digitalnews.digitalnews.CompleteArticleActivity;
 import br.com.digitalnews.digitalnews.R;
 import br.com.digitalnews.digitalnews.explore.model.ExploreSource;
 
@@ -29,9 +32,18 @@ public class ExploreRecyclerViewAdapter extends RecyclerView.Adapter<ExploreRecy
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ExploreSource exploreSource = exploreSources.get(position);
+    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
+        final ExploreSource exploreSource = exploreSources.get(position);
         holder.bind(exploreSource);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(holder.itemView.getContext(), ArticlesActivity.class);
+                intent.putExtra("CATEGORY" , exploreSource.getId());
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
