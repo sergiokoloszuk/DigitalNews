@@ -49,8 +49,8 @@
 
        <Button
            android:id="@+id/btn_login"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
+           android:layout_width="@dimen/btn_login_width"
+           android:layout_height="@dimen/btn_login_heigth"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/primary"
             android:fontFamily="@font/karla_bold"
@@ -96,7 +96,19 @@
 
         </LinearLayout>
 
-        <com.facebook.login.widget.LoginButton
+        <Button
+            android:id="@+id/btn_facebook_2"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="@dimen/btn_login_width"
+            android:layout_height="@dimen/btn_login_heigth"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/facebook"
+            android:drawableLeft="@drawable/ic_facebook"
+            android:fontFamily="@font/karla_bold"
+            android:text="Login with Facebook"
+            android:textAllCaps="true" />
+
+        <!--<com.facebook.login.widget.LoginButton
             android:id="@+id/btn_facebook"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
@@ -105,23 +117,24 @@
             android:backgroundTint="@color/facebook"
             android:drawableLeft="@drawable/ic_facebook"
             android:fontFamily="@font/karla_bold"
-            android:text="Log in with facebook"
+            android:text="Login with facebook"
             android:textAllCaps="true" />
+-->
 
-        <Button
+        <!--<Button
             android:id="@+id/btn_twiter"
             style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/btn_login_width"
+            android:layout_height="@dimen/btn_login_heigth"
             android:layout_marginTop="2dp"
             android:backgroundTint="@color/twitter"
             android:drawableLeft="@drawable/ic_twitter"
             android:fontFamily="@font/karla_bold"
             android:text="Log in with twiter"
-            android:textAllCaps="true" />
+            android:textAllCaps="true" />-->
 
 
-        <Button
+        <!--<Button
             android:id="@+id/btn_google"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
@@ -131,12 +144,12 @@
             android:drawableLeft="@drawable/ic_google"
             android:fontFamily="@font/karla_bold"
             android:text="Log in with google"
-            android:textAllCaps="true" />
+            android:textAllCaps="true" />-->
 
         <com.google.android.gms.common.SignInButton
             android:id="@+id/sign_in_button"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_width="@dimen/btn_login_width"
+            android:layout_height="@dimen/btn_login_heigth"
             android:layout_marginTop="15dp"
             />
 
