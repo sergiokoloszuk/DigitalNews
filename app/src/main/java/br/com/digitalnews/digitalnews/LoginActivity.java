@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -140,10 +141,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                             @Override
                             public void onSuccess(LoginResult loginResult) {
                                 Log.i("LOG", "LoginResult:" + loginResult);
-                                Toast.makeText( LoginActivity.this, "Logou", Toast.LENGTH_SHORT ).show();
-                                Intent intent = new Intent (getApplicationContext(),MainActivity.class);
-                                startActivity( intent );
-                                finish();
+                                gotoHome();
                             }
 
                             @Override
@@ -158,6 +156,19 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                         });
             }
         } );
+
+        AccessToken accessToken = AccessToken.getCurrentAccessToken();
+        boolean isLoggedIn = accessToken != null && !accessToken.isExpired();
+        if (isLoggedIn){
+            gotoHome();
+        }
+    }
+
+    private void gotoHome() {
+        Toast.makeText( LoginActivity.this, "Logou", Toast.LENGTH_SHORT ).show();
+        Intent intent = new Intent (getApplicationContext(),MainActivity.class);
+        startActivity( intent );
+        finish();
     }
 
     private void signIn() {
@@ -175,13 +186,9 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 GoogleSignInAccount account = result.getSignInAccount();
                 authWithGoogle(account);
             }
-        }
-
-        if (requestCode == FB_SIGN_IN) {
-            PreferenceManager.OnActivityResultListener callbackManager = null;
+        }else {
             callbackManager.onActivityResult(requestCode, resultCode, data);
         }
-
     }
 
     private void authWithGoogle(GoogleSignInAccount account) {
