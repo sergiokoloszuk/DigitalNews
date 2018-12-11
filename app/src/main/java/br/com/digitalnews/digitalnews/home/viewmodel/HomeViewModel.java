@@ -81,6 +81,31 @@ public class HomeViewModel extends AndroidViewModel{
 
     }
 
+    public void getArticlesCategory (String category){
+        disposable.add(
+                getApiService().getTopHeadlinesByCategory(category, API_KEY)
+                        .map(new Function<TopHeadlinesResponse, TopHeadlinesResponse>() {
+                            @Override
+                            public TopHeadlinesResponse apply(TopHeadlinesResponse response) throws Exception {
+                                return saveArticles(response);
+                            }
+                        })
+                        .subscribeOn(Schedulers.newThread())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(new Consumer<TopHeadlinesResponse>() {
+                            @Override
+                            public void accept(TopHeadlinesResponse response) throws Exception {
+                                TopHeadLinesArticlesLiveData.setValue(response.getTopHeadlinesArticles());
+                            }
+                        }, new Consumer<Throwable>() {
+                            @Override
+                            public void accept(Throwable throwable) throws Exception {
+                                Log.i("LOG", "Error: " + throwable.getMessage());
+                            }
+                        })
+        );
+    }
+
     private TopHeadlinesResponse saveArticles(TopHeadlinesResponse response) {
         NewsDatabase.getDatabase(getApplication()).getTopHeadlineArticleDAO().insert(response.getTopHeadlinesArticles());
         return response;

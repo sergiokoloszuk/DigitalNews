@@ -3,12 +3,14 @@ package br.com.digitalnews.digitalnews.explore.model;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 
 import com.google.gson.annotations.Expose;
 
 @Entity(tableName = "exploreSources")
-public class ExploreSource {
+public class ExploreSource implements Parcelable {
 
     @Expose
     private String category;
@@ -32,6 +34,47 @@ public class ExploreSource {
 
     @Expose
     private String url;
+
+    public ExploreSource() {
+    }
+
+    protected ExploreSource(Parcel in) {
+        category = in.readString();
+        country = in.readString();
+        description = in.readString();
+        id = in.readString();
+        language = in.readString();
+        name = in.readString();
+        url = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(category);
+        dest.writeString(country);
+        dest.writeString(description);
+        dest.writeString(id);
+        dest.writeString(language);
+        dest.writeString(name);
+        dest.writeString(url);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<ExploreSource> CREATOR = new Creator<ExploreSource>() {
+        @Override
+        public ExploreSource createFromParcel(Parcel in) {
+            return new ExploreSource(in);
+        }
+
+        @Override
+        public ExploreSource[] newArray(int size) {
+            return new ExploreSource[size];
+        }
+    };
 
     public String getCategory() {
         return category;

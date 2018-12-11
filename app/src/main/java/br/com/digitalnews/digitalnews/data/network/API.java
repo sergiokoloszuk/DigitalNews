@@ -18,4 +18,8 @@ public interface API {
     @GET("v2/top-headlines")
     Observable<TopHeadlinesResponse> getTopHeadlines(@Query("country") String country,
                                                      @Query("apiKey") String apiKey);
+
+    @GET("v2/top-headlines")
+    Observable<TopHeadlinesResponse> getTopHeadlinesByCategory(@Query("sources") String country,
+                                                     @Query("apiKey") String apiKey);
 }

@@ -1,5 +1,6 @@
 package br.com.digitalnews.digitalnews.adapters;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import br.com.digitalnews.digitalnews.CompleteArticleActivity;
 import br.com.digitalnews.digitalnews.R;
 import br.com.digitalnews.digitalnews.home.model.TopHeadlinesArticle;
 
@@ -32,9 +34,18 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        TopHeadlinesArticle article = articleList.get(position);
+    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
+        final TopHeadlinesArticle article = articleList.get(position);
         holder.bind(article);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(holder.itemView.getContext(), CompleteArticleActivity.class);
+                intent.putExtra("ARTICLE" , article);
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -65,7 +76,12 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
         }
 
         public void bind(TopHeadlinesArticle article) {
-            Picasso.get().load(article.getUrlToImage()).into(imageViewNews);
+            if (article.getUrlToImage() != null && !article.getUrlToImage().isEmpty()) {
+                Picasso.get().load(article.getUrlToImage()).into(imageViewNews);
+            }else {
+                imageViewNews.setImageResource(R.drawable.digital_news);
+            }
+
             textViewTitle.setText(article.getTitle());
             textViewDescription.setText(article.getDescription());
         }
