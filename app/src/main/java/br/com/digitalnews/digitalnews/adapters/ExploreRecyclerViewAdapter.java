@@ -65,7 +65,7 @@ public class ExploreRecyclerViewAdapter extends RecyclerView.Adapter<ExploreRecy
 
         //método bind
         public void bind(ExploreSource exploreSource){
-            imageView.setImageResource(R.drawable.news_3);
+            imageView.setImageResource(R.drawable.digital_news);
             sourceCategory.setText(exploreSource.getCategory());
         }
     }
