@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +20,8 @@ import br.com.digitalnews.digitalnews.home.viewmodel.HomeViewModel;
 
 public class ArticlesActivity extends AppCompatActivity {
     private HomeViewModel viewModel;
+    private ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +30,8 @@ public class ArticlesActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         viewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
-        RecyclerView recyclerView =findViewById(R.id.home_recyclerview);
+        RecyclerView recyclerView = findViewById(R.id.home_recyclerview);
+        progressBar = findViewById(R.id.progressBar);
         final HomeRecyclerViewAdapter adapter = new HomeRecyclerViewAdapter(new ArrayList<TopHeadlinesArticle>());
         GridLayoutManager layoutManager = new GridLayoutManager(this, 1);
 
@@ -39,6 +44,17 @@ public class ArticlesActivity extends AppCompatActivity {
             @Override
             public void onChanged(@Nullable List<TopHeadlinesArticle> articleList) {
                 adapter.update(articleList);
+            }
+        });
+
+        viewModel.isLoading.observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(@Nullable Boolean loading) {
+                if (loading) {
+                    progressBar.setVisibility(View.VISIBLE);
+                } else {
+                    progressBar.setVisibility(View.GONE);
+                }
             }
         });
     }

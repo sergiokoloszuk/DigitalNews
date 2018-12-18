@@ -14,6 +14,8 @@ import br.com.digitalnews.digitalnews.home.model.TopHeadlinesResponse;
 import br.com.digitalnews.digitalnews.home.model.TopHeadlinesSource;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
@@ -22,7 +24,7 @@ import static br.com.digitalnews.digitalnews.data.network.RetrofitService.API_KE
 import static br.com.digitalnews.digitalnews.data.network.RetrofitService.getApiService;
 import static br.com.digitalnews.digitalnews.util.AppUtil.isNetworkConnected;
 
-public class HomeViewModel extends AndroidViewModel{
+public class HomeViewModel extends AndroidViewModel {
 
 
     public HomeViewModel(@NonNull Application application) {
@@ -32,12 +34,12 @@ public class HomeViewModel extends AndroidViewModel{
     public MutableLiveData<List<TopHeadlinesArticle>> TopHeadLinesArticlesLiveData = new MutableLiveData<>();
     public MutableLiveData<List<TopHeadlinesSource>> topHeadlinesSourceLiveData = new MutableLiveData<>();
     MutableLiveData<Throwable> liveDataError = new MutableLiveData<>();
-    MutableLiveData<Boolean> isLoading = new MutableLiveData<>();
+    public MutableLiveData<Boolean> isLoading = new MutableLiveData<>();
     private CompositeDisposable disposable = new CompositeDisposable();
 
-    public void getArticles(){
+    public void getArticles() {
 
-        if(isNetworkConnected(getApplication())){
+        if (isNetworkConnected(getApplication())) {
             disposable.add(
                     getApiService().getTopHeadlines("br", API_KEY)
                             .map(new Function<TopHeadlinesResponse, TopHeadlinesResponse>() {
@@ -48,6 +50,18 @@ public class HomeViewModel extends AndroidViewModel{
                             })
                             .subscribeOn(Schedulers.newThread())
                             .observeOn(AndroidSchedulers.mainThread())
+                            .doOnSubscribe(new Consumer<Disposable>() {
+                                @Override
+                                public void accept(Disposable disposable) throws Exception {
+                                    isLoading.setValue(true);
+                                }
+                            })
+                            .doOnTerminate(new Action() {
+                                @Override
+                                public void run() throws Exception {
+                                    isLoading.setValue(false);
+                                }
+                            })
                             .subscribe(new Consumer<TopHeadlinesResponse>() {
                                 @Override
                                 public void accept(TopHeadlinesResponse response) throws Exception {
@@ -81,7 +95,7 @@ public class HomeViewModel extends AndroidViewModel{
 
     }
 
-    public void getArticlesCategory (String category){
+    public void getArticlesCategory(String category) {
         disposable.add(
                 getApiService().getTopHeadlinesByCategory(category, API_KEY)
                         .map(new Function<TopHeadlinesResponse, TopHeadlinesResponse>() {
@@ -92,6 +106,18 @@ public class HomeViewModel extends AndroidViewModel{
                         })
                         .subscribeOn(Schedulers.newThread())
                         .observeOn(AndroidSchedulers.mainThread())
+                        .doOnSubscribe(new Consumer<Disposable>() {
+                            @Override
+                            public void accept(Disposable disposable) throws Exception {
+                                isLoading.setValue(true);
+                            }
+                        })
+                        .doOnTerminate(new Action() {
+                            @Override
+                            public void run() throws Exception {
+                                isLoading.setValue(false);
+                            }
+                        })
                         .subscribe(new Consumer<TopHeadlinesResponse>() {
                             @Override
                             public void accept(TopHeadlinesResponse response) throws Exception {
