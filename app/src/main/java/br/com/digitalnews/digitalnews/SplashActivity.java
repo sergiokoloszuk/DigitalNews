@@ -19,6 +19,7 @@ import java.util.TimerTask;
 
 public class SplashActivity extends AppCompatActivity {
     private ImageView imageView;
+    private Timer timer = new Timer();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,14 +27,14 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         getHash();
         imageView = findViewById(R.id.imageview_splash);
-       imageView.setOnClickListener(new View.OnClickListener() {
+        imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                skip();
             }
         });
 
-        new Timer().schedule(new TimerTask() {
+        timer.schedule(new TimerTask() {
             @Override
             public void run() {
                 skip();
@@ -42,11 +43,12 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void skip() {
+        timer.cancel();
         startActivity(new Intent(SplashActivity.this, LoginActivity.class));
         finish();
     }
 
-    private void getHash (){
+    private void getHash() {
         try {
             PackageInfo info = getPackageManager().getPackageInfo(
                     "br.com.digitalnews.digitalnews",

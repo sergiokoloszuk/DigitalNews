@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,10 +48,12 @@ public class HomeFragment extends Fragment {
         viewPager = view.findViewById(R.id.home_viewpager);
         final ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getActivity().getSupportFragmentManager(), new ArrayList<Fragment>());
         viewPager.setAdapter(viewPagerAdapter);
-
+        final ProgressBar progressBar = view.findViewById(R.id.progressBar);
         RecyclerView recyclerView = view.findViewById(R.id.home_recyclerview);
+
         final HomeRecyclerViewAdapter adapter = new HomeRecyclerViewAdapter(new ArrayList<TopHeadlinesArticle>());
         GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 1);
+
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
@@ -61,6 +64,17 @@ public class HomeFragment extends Fragment {
             public void onChanged(@Nullable List<TopHeadlinesArticle> articleList) {
                 adapter.update(articleList);
                 viewPagerAdapter.update(setFragments(articleList));
+            }
+        });
+
+        viewModel.isLoading.observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(@Nullable Boolean loading) {
+                if (loading) {
+                    progressBar.setVisibility(View.VISIBLE);
+                } else {
+                    progressBar.setVisibility(View.GONE);
+                }
             }
         });
         return view;
@@ -74,7 +88,7 @@ public class HomeFragment extends Fragment {
         for (TopHeadlinesArticle article : articleList) {
             fragments.add(HomeViewPager.newInstance(article.getUrlToImage(), article.getTitle()));
         }
-        
+
         return fragments;
     }
 }
