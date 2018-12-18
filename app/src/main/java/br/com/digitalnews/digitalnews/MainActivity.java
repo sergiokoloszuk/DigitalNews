@@ -10,9 +10,8 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 import br.com.digitalnews.digitalnews.explore.view.ExploreFragment;
-import br.com.digitalnews.digitalnews.notifications.view.NotificationsFragment;
-import br.com.digitalnews.digitalnews.profile.view.ProfileFragment;
 import br.com.digitalnews.digitalnews.home.view.HomeFragment;
+import br.com.digitalnews.digitalnews.profile.view.ProfileFragment;
 
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -30,9 +29,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                     return true;
                 case R.id.navigation_explore:
                     replaceFragment(new ExploreFragment());
-                    return true;
-                case R.id.navigation_notifications:
-                    replaceFragment(new NotificationsFragment());
                     return true;
                 case R.id.navigation_account:
                     replaceFragment(new ProfileFragment());

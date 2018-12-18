@@ -12,7 +12,6 @@ import android.widget.TextView;
 import java.util.List;
 
 import br.com.digitalnews.digitalnews.ArticlesActivity;
-import br.com.digitalnews.digitalnews.CompleteArticleActivity;
 import br.com.digitalnews.digitalnews.R;
 import br.com.digitalnews.digitalnews.explore.model.ExploreSource;
 
@@ -59,13 +58,13 @@ public class ExploreRecyclerViewAdapter extends RecyclerView.Adapter<ExploreRecy
         public ViewHolder(View itemView) {
             super(itemView);
 
-            imageView = itemView.findViewById(R.id.news_noticias);
+            //imageView = itemView.findViewById(R.id.news_noticias);
             sourceCategory = itemView.findViewById(R.id.source_category);
         }
 
         //método bind
         public void bind(ExploreSource exploreSource){
-            imageView.setImageResource(R.drawable.digital_news);
+            //imageView.setImageResource(R.drawable.digital_news);
             sourceCategory.setText(exploreSource.getCategory());
         }
     }

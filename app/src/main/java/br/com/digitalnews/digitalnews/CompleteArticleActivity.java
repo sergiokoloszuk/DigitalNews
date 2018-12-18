@@ -1,15 +1,16 @@
 package br.com.digitalnews.digitalnews;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
-import br.com.digitalnews.digitalnews.R;
-import br.com.digitalnews.digitalnews.explore.model.ExploreSource;
 import br.com.digitalnews.digitalnews.home.model.TopHeadlinesArticle;
 
 public class CompleteArticleActivity extends AppCompatActivity {
@@ -20,6 +21,7 @@ public class CompleteArticleActivity extends AppCompatActivity {
     private TextView textFonte;
     private TextView textData;
     private TextView textJornalista;
+    private Button btnGoTo;
 
 
     @Override
@@ -27,7 +29,7 @@ public class CompleteArticleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complete_article);
 
-        TopHeadlinesArticle article = getIntent().getParcelableExtra("ARTICLE");
+        final TopHeadlinesArticle article = getIntent().getParcelableExtra("ARTICLE");
 
         initViews();
 
@@ -38,22 +40,29 @@ public class CompleteArticleActivity extends AppCompatActivity {
         }
 
         textViewTitle.setText(article.getTitle());
-        textViewText.setText(article.getDescription());
+        textViewText.setText(article.getContent());
 
         if (article.getSource() != null && article.getSource().getName() != null) {
             textFonte.setText(article.getSource().getName());
             textJornalista.setText(article.getAuthor());
         }
 
-
+        btnGoTo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(article.getUrl()));
+                startActivity(intent);
+            }
+        });
     }
 
     private void initViews() {
         imageViewPoster = findViewById(R.id.ic_notifications);
         textViewTitle = findViewById(R.id.tv_manchete);
         textViewText = findViewById(R.id.tv_corpo_da_noticia);
-        textData = findViewById(R.id.tv_data_da_noticia);
-        textFonte = findViewById(R.id.tv_fonte);
-        textJornalista = findViewById(R.id.tv_jornalista);
+        btnGoTo = findViewById(R.id.btnGoTo);
+        //textData = findViewById(R.id.tv_data_da_noticia);
+        //textFonte = findViewById(R.id.tv_fonte);
+        //textJornalista = findViewById(R.id.tv_jornalista);
     }
 }

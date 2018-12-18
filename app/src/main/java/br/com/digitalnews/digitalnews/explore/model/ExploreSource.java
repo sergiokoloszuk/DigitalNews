@@ -132,4 +132,12 @@ public class ExploreSource implements Parcelable {
         this.url = url;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof ExploreSource)) {
+            return false;
+        }
+
+        return category.equals(((ExploreSource) obj).category);
+    }
 }

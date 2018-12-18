@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,8 +54,10 @@ public class ExploreFragment extends Fragment {
         final ExploreRecyclerViewAdapter adapter = new ExploreRecyclerViewAdapter(new ArrayList<ExploreSource>());
         LinearLayoutManager linearLayoutManager = new GridLayoutManager(getContext(),2);
 
+        final ProgressBar progressBar = view.findViewById(R.id.progressBar);
+
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         viewModel.getCategories();
 
@@ -62,6 +65,17 @@ public class ExploreFragment extends Fragment {
             @Override
             public void onChanged(@Nullable List<ExploreSource> exploreSources) {
                 adapter.update(exploreSources);
+            }
+        });
+
+        viewModel.isLoading.observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(@Nullable Boolean loading) {
+                if (loading) {
+                    progressBar.setVisibility(View.VISIBLE);
+                } else {
+                    progressBar.setVisibility(View.GONE);
+                }
             }
         });
 
