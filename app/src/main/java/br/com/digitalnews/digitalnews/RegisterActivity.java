@@ -91,25 +91,25 @@ public class RegisterActivity extends AppCompatActivity {
                     abrirLoginUsuario();
 
 
-                } else {
-                    String erroException = "";
-
-                    try {
-
-                        throw task.getException();
-
-                    } catch (FirebaseAuthWeakPasswordException e) {
-                        erroException = "Senha muito fraca";
-                    } catch (FirebaseAuthInvalidCredentialsException e) {
-                        erroException = "O e-mail digitado é inválido";
-                    } catch (FirebaseAuthUserCollisionException e) {
-                        erroException = "E-mail já cadastrado";
-                    } catch (Exception e) {
-                        erroException = "Erro ao efetuar o cadastro";
-                        e.printStackTrace();
-                    }
-                    Toast.makeText( RegisterActivity.this, "Erro" + erroException, Toast.LENGTH_SHORT ).show();
-                }
+               } //else {
+//                    String erroException = "";
+//
+//                    try {
+//
+//                        throw task.getException();
+//
+//                    } catch (FirebaseAuthWeakPasswordException e) {
+//                        erroException = "Senha muito fraca";
+//                    } catch (FirebaseAuthInvalidCredentialsException e) {
+//                        erroException = "O e-mail digitado é inválido";
+//                    } catch (FirebaseAuthUserCollisionException e) {
+//                        erroException = "E-mail já cadastrado";
+//                    } catch (Exception e) {
+//                        erroException = "Erro ao efetuar o cadastro";
+//                        e.printStackTrace();
+//                    }
+//                    Toast.makeText( RegisterActivity.this, "Erro" + erroException, Toast.LENGTH_SHORT ).show();
+//                }
             }
         } );
     }

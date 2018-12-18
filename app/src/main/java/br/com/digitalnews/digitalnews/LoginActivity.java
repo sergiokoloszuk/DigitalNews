@@ -140,11 +140,11 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             }
         } );
 
-        AccessToken accessToken = AccessToken.getCurrentAccessToken();
-        boolean isLoggedIn = accessToken != null && !accessToken.isExpired();
-        if (isLoggedIn) {
-            gotoHome();
-        }
+//        AccessToken accessToken = AccessToken.getCurrentAccessToken();
+//        boolean isLoggedIn = accessToken != null && !accessToken.isExpired();
+//        if (isLoggedIn) {
+//            gotoHome();
+//        }
     }
 
     private void gotoHome() {
