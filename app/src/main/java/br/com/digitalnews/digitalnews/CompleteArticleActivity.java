@@ -1,15 +1,12 @@
 package br.com.digitalnews.digitalnews;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
-import br.com.digitalnews.digitalnews.R;
-import br.com.digitalnews.digitalnews.explore.model.ExploreSource;
 import br.com.digitalnews.digitalnews.home.model.TopHeadlinesArticle;
 
 public class CompleteArticleActivity extends AppCompatActivity {
@@ -38,7 +35,7 @@ public class CompleteArticleActivity extends AppCompatActivity {
         }
 
         textViewTitle.setText(article.getTitle());
-        textViewText.setText(article.getDescription());
+        textViewText.setText(article.getContent());
 
         if (article.getSource() != null && article.getSource().getName() != null) {
             textFonte.setText(article.getSource().getName());
@@ -52,8 +49,8 @@ public class CompleteArticleActivity extends AppCompatActivity {
         imageViewPoster = findViewById(R.id.ic_notifications);
         textViewTitle = findViewById(R.id.tv_manchete);
         textViewText = findViewById(R.id.tv_corpo_da_noticia);
-        textData = findViewById(R.id.tv_data_da_noticia);
-        textFonte = findViewById(R.id.tv_fonte);
-        textJornalista = findViewById(R.id.tv_jornalista);
+        //textData = findViewById(R.id.tv_data_da_noticia);
+        //textFonte = findViewById(R.id.tv_fonte);
+        //textJornalista = findViewById(R.id.tv_jornalista);
     }
 }

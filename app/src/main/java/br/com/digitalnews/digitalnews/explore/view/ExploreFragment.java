@@ -54,7 +54,7 @@ public class ExploreFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new GridLayoutManager(getContext(),2);
 
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         viewModel.getCategories();
 
